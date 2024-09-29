@@ -1,8 +1,9 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import styles from '../../../app/page.module.css';
+//import cls from "./projects.module.scss"
 
-const ProjectsUI: FC = () => (
+const Projects: FC = () => (
 	<div className={styles.page}>
 		<main className={styles.main}>
 			<Image
@@ -93,4 +94,4 @@ const ProjectsUI: FC = () => (
 	</div>
 );
 
-export default ProjectsUI;
+export default Projects;

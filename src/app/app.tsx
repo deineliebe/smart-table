@@ -3,7 +3,7 @@ import React from 'react';
 //import { useLocation, useNavigate } from 'react-router';
 //import Image from 'next/image';
 import { Provider } from 'react-redux';
-import Projects from '@/pages/projects/projects';
+import { Projects } from '@/pages/projects';
 import { store } from './store';
 
 export default function App() {
