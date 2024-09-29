@@ -2,7 +2,9 @@ import React from 'react';
 //import { useDispatch } from 'react-redux';
 //import { useLocation, useNavigate } from 'react-router';
 //import Image from 'next/image';
-import styles from './page.module.css';
+import { Provider } from 'react-redux';
+import Projects from '@/pages/projects/projects';
+import { store } from './store';
 
 export default function App() {
 	//const navigate = useNavigate();
@@ -17,12 +19,10 @@ export default function App() {
     }, []);*/
 
 	return (
-		<div className={styles.page}>
-			<main className={styles.main}></main>
-			<footer className={styles.footer}>
-				<span>Alvish Baldha</span>
-				<span>© 2022 | All Rights Reserved</span>
-			</footer>
-		</div>
+		<React.StrictMode>
+			<Provider store={store}>
+				<Projects />
+			</Provider>
+		</React.StrictMode>
 	);
 }
