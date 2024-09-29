@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import styles from '../../../app/page.module.css';
+import styles from '../../app/styles/page.module.css';
 //import cls from "./projects.module.scss"
 
 const Projects: FC = () => (
