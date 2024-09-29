@@ -1,1 +1,1 @@
-export const api = {};
+export const apiMap = {};

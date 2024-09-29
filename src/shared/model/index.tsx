@@ -1,2 +1,2 @@
-export { constants } from './constants';
-export { api } from './api';
+export { constantsMap } from './constants';
+export { apiMap } from './api';

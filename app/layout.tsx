@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Footer } from '@/widgets/footer';
+import styles from '../src/shared/ui/styles.module.css';
 
 const inter = Inter({ weight: ['400', '700'], subsets: ['latin'] });
 
@@ -17,10 +18,10 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={inter.className}>
-				<div>
-					<main>{children}</main>
-					<Footer />
+				<div className={styles.page}>
+					<main className={styles.main}>{children}</main>
 				</div>
+				<Footer />
 			</body>
 		</html>
 	);

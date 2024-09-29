@@ -1,10 +1,10 @@
-//import cls from "./projects.module.scss"
+import styles from '../../../shared/ui/styles.module.css';
 
 const Footer = () => {
 	return (
-		<div>
-			<span>Alvish Baldha</span>
-			<span>© 2022 | All Rights Reserved</span>
+		<div className={styles.footer}>
+			<p>Alvish Baldha</p>
+			<p>© 2022 | All Rights Reserved</p>
 		</div>
 	);
 };

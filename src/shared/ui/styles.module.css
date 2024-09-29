@@ -90,18 +90,16 @@ a.secondary {
 
 .footer {
 	display: flex;
-	grid-row-start: 3;
-	gap: 24px;
-}
-
-.footer a {
-	display: flex;
+	width: 100%;
 	align-items: center;
+	text-align: center;
 	gap: 8px;
+	padding: 30px 0;
 }
 
-.footer img {
-	flex-shrink: 0;
+.footer p {
+	display: block;
+	justify-content: center;
 }
 
 /* Enable hover only on non-touch devices */
@@ -115,11 +113,6 @@ a.secondary {
 	a.secondary:hover {
 		background: var(--button-secondary-hover);
 		border-color: transparent;
-	}
-
-	.footer a:hover {
-		text-decoration: underline;
-		text-underline-offset: 4px;
 	}
 }
 
@@ -149,12 +142,6 @@ a.secondary {
 
 	a.secondary {
 		min-width: auto;
-	}
-
-	.footer {
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
 	}
 }
 
