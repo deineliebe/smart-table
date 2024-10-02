@@ -11,10 +11,10 @@ body {
 
 body {
 	color: #464f60;
-	font-family: 'Inter', sans-serif;
-	font-size: 14px;
 	font-weight: 500;
-	line-height: 20px;
+	font-size: 14px;
+	font-family: 'Inter', sans-serif;
+	line-height: 150;
 	letter-spacing: 0.02em;
 	background: var(--background);
 	-webkit-font-smoothing: antialiased;
@@ -30,45 +30,4 @@ body {
 a {
 	color: inherit;
 	text-decoration: none;
-}
-
-.canBeShadowed:focus {
-	box-shadow: 0px 0px 0px 4px #5e5adb66;
-}
-
-.white:disabled {
-	color: #868fa0;
-	background: #f7f9fc;
-}
-
-.red {
-	background: #d1293d;
-	color: #ffffff;
-}
-
-.red:hover {
-	background: #d1293d;
-}
-
-.red:disabled {
-	background: #f76f7f;
-	color: #fcc5cb;
-}
-
-.blue {
-	background: #4945c4;
-	color: #ffffff;
-}
-
-.blue:hover {
-	background: #4945c4;
-}
-
-.blue:disabled {
-	background: #9e9bf5;
-	color: #ededfc;
-}
-
-.upperCase {
-	text-transform: uppercase;
 }

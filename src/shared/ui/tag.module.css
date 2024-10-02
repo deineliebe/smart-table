@@ -1,31 +1,44 @@
 .tag {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
 	width: 79px;
 	height: 20px;
-	padding: 1px 8px 1px 8px;
-	gap: 6px;
+	padding: 1px 8px;
+	font-size: 12px;
+	letter-spacing: 0.03em;
+	background: #e1fcef;
 	border-radius: 4px;
 }
 
 .tag-success {
+	color: #14804a;
 	background: #e1fcef;
 }
 
 .tag-warning {
+	color: #aa5b00;
 	background: #fcf2e6;
 }
 
 .tag-error {
+	color: #d1293d;
 	background: #ffedef;
 }
 
 .tag-active {
+	color: #5e5adb;
 	background: #ededfc;
 }
 
 .tag-info {
+	color: #2264e5;
 	background: #ebf0fa;
 }
 
 .tag-inactive {
+	color: #5a6376;
 	background: #e9edf5;
 }

@@ -1,8 +1,8 @@
-import styles from '../../../shared/ui/styles.module.css';
+import './footer.css';
 
 const Footer = () => {
 	return (
-		<div className={styles.footer}>
+		<div className='footer'>
 			<p>Alvish Baldha</p>
 			<p>© 2022 | All Rights Reserved</p>
 		</div>
