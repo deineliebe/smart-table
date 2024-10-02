@@ -1,11 +1,7 @@
 .button {
 	gap: 8px;
 	border-radius: 6px;
-	opacity: 0px;
-}
-
-.button:focus {
-	box-shadow: 0px 0px 0px 4px #5E5ADB66;
+	color: #171c26;
 }
 
 .button-small {
@@ -24,32 +20,4 @@
 	width: 95px;
 	height: 32px;
 	padding: 6px 12px 6px 12px;
-}
-
-.button-white:disabled {
-	background: #F7F9FC;
-}
-
-.button-red {
-	background: #D1293D;
-}
-
-.button-red:hover {
-	background: #D1293D;
-}
-
-.button-red:disabled {
-	background: #F76F7F;
-}
-
-.button-blue {
-	background: #4945C4;
-}
-
-.button-blue:hover {
-	background: #4945C4;
-}
-
-.button-blue:disabled {
-	background: #9E9BF5;
 }

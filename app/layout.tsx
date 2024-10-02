@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import { Footer } from '@/widgets/footer';
 import styles from '../src/shared/ui/styles.module.css';
 
-const inter = Inter({ weight: ['400', '700'], subsets: ['latin'] });
+const inter = Inter({ weight: ['500', '700'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: 'Smart table',

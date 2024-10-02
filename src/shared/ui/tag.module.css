@@ -1,0 +1,31 @@
+.tag {
+	width: 79px;
+	height: 20px;
+	padding: 1px 8px 1px 8px;
+	gap: 6px;
+	border-radius: 4px;
+}
+
+.tag-success {
+	background: #e1fcef;
+}
+
+.tag-warning {
+	background: #fcf2e6;
+}
+
+.tag-error {
+	background: #ffedef;
+}
+
+.tag-active {
+	background: #ededfc;
+}
+
+.tag-info {
+	background: #ebf0fa;
+}
+
+.tag-inactive {
+	background: #e9edf5;
+}
