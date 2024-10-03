@@ -7,17 +7,6 @@ import { store } from '../shared/model/store';
 import Projects from '@/pages/projects/page';
 
 export default function App() {
-	//const navigate = useNavigate();
-	//const location = useLocation();
-	//const background = location.state?.background;
-	//const dispatch = useDispatch();
-	//const isAuthorized = useSelector(getIsAuthorized);
-
-	/*useEffect(() => {
-      dispatch(getIngredientsList());
-      if (!isAuthorized) dispatch(getUserData());
-    }, []);*/
-
 	return (
 		<React.StrictMode>
 			<Provider store={store}>

@@ -1,0 +1,17 @@
+{
+    "projects": [
+      { "id": 1, "name": "Allosaurus web app", "PM": "Leo Gouse", "status": "On track", "last update": "15 Mar 2021, 12:47 PM", "resources": ["UX/UI Design", "Frontend", "Backend"], "start": "15 May 2021", "end": "15 Aug 2021", "estimation": "US$ 10.5k" },
+      { "id": 2, "name": "MicroRaptor website", "PM": "Leo Gouse", "status": "On track", "last update": "15 Mar 2021, 12:47 PM", "resources": ["Full Stack", "Graphic Designer", "Web Designer"], "start": "15 May 2021", "end": "15 Aug 2021", "estimation": "US$ 10.5k" },
+      { "id": 3, "name": "Tarius landing page", "PM": "Tatiana Dias", "status": "On hold", "last update": "15 Mar 2021, 12:47 PM", "resources": [], "start": "", "end": "", "estimation": "US$ 10.5k" },
+      { "id": 4, "name": "Rugops App", "PM": "Leo Gouse", "status": "At risk", "last update": "15 Mar 2021, 12:47 PM", "resources": ["Frontend", "QA", "Web Designer"], "start": "15 May 2021", "end": "15 Aug 2021", "estimation": "US$ 10.5k" },
+      { "id": 5, "name": "Erketu", "PM": "Leo Gouse", "status": "On track", "last update": "15 Mar 2021, 12:47 PM", "resources": ["UX/UI Design", "Frontend", "Backend"], "start": "15 May 2021", "end": "15 Aug 2021", "estimation": "" },
+      { "id": 6, "name": "Capricorn", "PM": "Tatiana Dias", "status": "On track", "last update": "15 Mar 2021, 12:47 PM", "resources": ["Web Designer", "Frontend", "Graphic Designer"], "start": "15 May 2021", "end": "15 Aug 2021", "estimation": "US$ 10.5k" },
+      { "id": 7, "name": "Sagittarius", "PM": "Tatiana Dias", "status": "Potential risk", "last update": "15 Mar 2021, 12:47 PM", "resources": [], "start": "15 May 2021", "end": "15 Aug 2021", "estimation": "" },
+      { "id": 8, "name": "Gemini", "PM": "Roger Vaccaro", "status": "On track", "last update": "15 Mar 2021, 12:47 PM", "resources": ["QA", "Frontend", "Backend"], "start": "15 May 2021", "end": "15 Aug 2021", "estimation": "US$ 10.5k" },
+      { "id": 9, "name": "Pisces", "PM": "Leo Gouse", "status": "On track", "last update": "15 Mar 2021, 12:47 PM", "resources": ["Graphic Designer", "QA", "Backend"], "start": "15 May 2021", "end": "15 Aug 2021", "estimation": "US$ 10.5k" },
+      { "id": 10, "name": "Taurus", "PM": "Tatiana Dias", "status": "On track", "last update": "15 Mar 2021, 12:47 PM", "resources": ["UX/UI Design", "Web Designer", "Full Stack"], "start": "15 May 2021", "end": "15 Aug 2021", "estimation": "US$ 10.5k" },
+      { "id": 11, "name": "Osiris", "PM": "Leo Gouse", "status": "Potential risk", "last update": "15 Mar 2021, 12:47 PM", "resources": ["Web Designer", "Graphic Designer", "Full Stack"], "start": "15 May 2021", "end": "15 Aug 2021", "estimation": "US$ 10.5k" }
+    ],
+    "users": [{ "name": "Roger Vaccaro" }, {"name": "Tatiana Dias"}, {"name": "Leo Gouse"}],
+    "profile": { "name": "Tatiana Dias" }
+}
