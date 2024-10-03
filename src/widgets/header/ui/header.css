@@ -1,0 +1,24 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: 20px auto;
+	color: #222834;
+	background: #f7f9fc;
+	border: 1px solid #e9edf5;
+}
+
+.header-block {
+	display: flex;
+	gap: 14px;
+}
+
+.header-number {
+	display: flex;
+	flex-direction: row;
+	padding: 2px 6px;
+	color: #5e5adb;
+	place-self: center;
+	background: #ededfc;
+	border-radius: 13px;
+}
