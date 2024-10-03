@@ -5,19 +5,13 @@
 }
 
 .button-small {
-	width: 24px;
-	height: 20px;
 	padding: 2px 4px;
 }
 
 .button-medium {
-	width: 71px;
-	height: 32px;
 	padding: 6px 12px;
 }
 
 .button-large {
-	width: 95px;
-	height: 32px;
 	padding: 6px 12px;
 }

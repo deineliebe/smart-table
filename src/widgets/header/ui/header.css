@@ -1,16 +1,28 @@
 .header {
+	position: fixed;
+	top: 0;
+	right: 0;
 	display: flex;
 	justify-content: space-between;
-	box-sizing: border-box;
-	padding: 20px auto;
+	inline-size: calc(100% - var(--sidebar-width, 72px));
 	color: #222834;
 	background: #f7f9fc;
 	border: 1px solid #e9edf5;
+	place-items: center;
+}
+
+.header svg {
+	cursor: pointer;
+}
+
+.header-avatar {
+	border-radius: 50%;
 }
 
 .header-block {
 	display: flex;
 	gap: 14px;
+	padding: 0 12px;
 }
 
 .header-number {

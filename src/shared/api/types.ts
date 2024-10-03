@@ -1,19 +1,17 @@
-export type TResource = 'UX/UI Design' | 'Frontend' | 'Backend' | 'Full Stack' | 'Graphic Designer' | 'Web Designer' | 'QA';
+import { TProject, TUser } from '../model/types';
 
-export type TTag = 'Success' | 'Warning' | 'Error' | 'Active' | 'Info' | 'Inactive';
+type TServerResponse<T> = {
+	success: boolean;
+} & T;
 
-export type TProject = {
-  id: string;
-  name: string;
-  PM: string;
-  status: string;
-  last_update: string;
-  resources: TResource[];
-  start: string;
-  end: string;
-  estimation: string;
-};
+export type TProjectsResponse = TServerResponse<{
+	data: TProject[];
+}>;
 
-export type TUser = {
-  name: string;
-};
+export type TUsersResponse = TServerResponse<{
+	data: TUser[];
+}>;
+
+export type TProfileResponse = TServerResponse<{
+	data: TUser;
+}>;
