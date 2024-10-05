@@ -8,6 +8,10 @@ export type TProjectsResponse = TServerResponse<{
 	data: TProject[];
 }>;
 
+export type TNewProjectResponse = TServerResponse<{
+	data: TProject;
+}>;
+
 export type TUsersResponse = TServerResponse<{
 	data: TUser[];
 }>;

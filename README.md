@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## PostgreSQL installing
+
+I used pgAdmin 4 for creating a database.
+I used an existing PostgreSQL 17 server, then I created a *SmartTable* database. In it I made some tables:   
+ *  projects
+<br>Name - `char[]`, primary key
+<br>Status - `char[]`
+<br>Last update - `date`
+<br>Start time - `date`
+<br>End time - `date`
+<br>Estimation - `double precision`
+
 
 ## Getting Started
 
