@@ -1,0 +1,22 @@
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	block-size: 100%;
+	overflow: auto;
+	background: #151357;
+	place-items: center;
+}
+
+.sidebar-logo {
+	display: block;
+	padding: 16px;
+}
+
+.sidebar-element {
+	padding: 8px;
+	cursor: pointer;
+}
