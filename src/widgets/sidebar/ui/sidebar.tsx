@@ -21,7 +21,7 @@ const Sidebar = () => {
 				<path d='M40 35L20 1L33.3333 37L40 35Z' fill='#9E9BF5' />
 			</svg>
 			<svg
-				className='sidebar-element'
+				className='sidebar-element active'
 				width='24'
 				height='24'
 				viewBox='0 0 24 24'

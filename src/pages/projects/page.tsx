@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import styles from '../../shared/ui/styles.module.css';
+import { Pagination } from '@/widgets/pagination';
 //import cls from "./projects.module.scss"
 
 const Projects: FC = () => (
@@ -45,6 +46,7 @@ const Projects: FC = () => (
 				Read our docs
 			</a>
 		</div>
+		<Pagination />
 	</>
 );
 

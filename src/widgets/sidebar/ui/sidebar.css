@@ -20,3 +20,9 @@
 	padding: 8px;
 	cursor: pointer;
 }
+
+.active {
+	background: #0d0b45;
+	border: 1px solid #2a278f;
+	border-radius: 6px;
+}

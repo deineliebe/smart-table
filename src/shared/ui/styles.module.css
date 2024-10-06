@@ -4,10 +4,9 @@
 	--gray-alpha-100: rgba(var(--gray-rgb), 0.05);
 	--button-primary-hover: #383838;
 	--button-secondary-hover: #f2f2f2;
-	display: grid;
-	grid-template-rows: 20px 1fr 20px;
-	place-items: center center;
 	min-height: 100svh;
+	margin: var(--header-width, 56px) 20px 0 var(--sidebar-width, 72px);
+	place-items: center center;
 }
 
 .main {

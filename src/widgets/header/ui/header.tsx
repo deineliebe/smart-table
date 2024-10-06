@@ -105,8 +105,8 @@ const Header = () => {
 				<Image
 					className='header-avatar'
 					src={avatar}
-					width={32}
-					height={32}
+					width={30}
+					height={30}
 					alt='Avatar'
 				/>
 			</div>
