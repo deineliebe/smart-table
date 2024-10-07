@@ -1,6 +1,6 @@
 import './pagination.css';
 import buttonStyles from '../../../shared/ui/button.module.css';
-import styles from '../../../shared/ui/button.module.css';
+import styles from '../../../shared/ui/styles.module.css';
 
 const Pagination = () => {
 	return (
