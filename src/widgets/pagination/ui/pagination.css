@@ -18,7 +18,6 @@
 }
 
 .pagination-block button {
-	/* Button */
 	display: flex;
 	gap: 8px;
 	border-radius: 6px;
