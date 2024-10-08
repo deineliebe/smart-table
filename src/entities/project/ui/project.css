@@ -1,6 +1,7 @@
 .project {
 	display: grid;
-	flex-direction: column;
+	grid-template-columns: 46px 36px 48px 298px 44px 150px 200px 100px 260px 140px auto;
+	grid-auto-rows: 48px;
 	align-items: center;
 	gap: 10px;
 	block-size: 100%;

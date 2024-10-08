@@ -1,6 +1,6 @@
 import { TProfileResponse, TProjectsResponse, TUsersResponse } from './types';
 
-const URL = process.env.API_URL;
+const URL = process.env.REACT_APP_API_URL;
 
 const checkResponse = <T>(res: Response): Promise<T> =>
 	res.ok ? res.json() : res.json().then((err) => Promise.reject(err));
