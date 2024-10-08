@@ -1,12 +1,18 @@
 import './pagination.css';
 import buttonStyles from '../../../shared/ui/button.module.css';
-import styles from '../../../shared/ui/button.module.css';
+import styles from '../../../shared/ui/styles.module.css';
+import { TProject } from '@/shared/model/types';
+import { useSelector } from '@/shared/lib/store/store';
+import { getProjectData } from '@/shared/lib/store/slices/projects';
 
 const Pagination = () => {
+	const projects: TProject[] = useSelector(getProjectData);
 	return (
 		<div className='pagination'>
 			<div className='pagination-block'>
-				<p>1-20 of 27</p>
+				<p>
+					{projects.length}-{projects.length} of {projects.length}
+				</p>
 			</div>
 			<div className='pagination-block'>
 				<p>Rows per page:</p>
@@ -30,7 +36,7 @@ const Pagination = () => {
 						/>
 					</svg>
 				</button>
-				<p>1/2</p>
+				<p>1/1</p>
 				<button
 					className={`${buttonStyles.button} ${buttonStyles['button-small']} ${styles.canBeShadowed} disabled`}
 				>
