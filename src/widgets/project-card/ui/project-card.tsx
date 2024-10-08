@@ -26,9 +26,9 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 					fill='#868FA0'
 				/>
 			</svg>
-			<p>1</p>
-			<p>Allosaurus web app</p>
-			<p>PM</p>
+			<p>{projectInfo.id}</p>
+			<p>{projectInfo.name}</p>
+			<p>{projectInfo.PM}</p>
 			<div>
 				<svg
 					width='6'
@@ -39,7 +39,7 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 				>
 					<rect width='6' height='6' rx='2' fill='#38A06C' />
 				</svg>
-				<span>On track</span>
+				<span>{projectInfo.tag}</span>
 			</div>
 			<div>
 				<svg
@@ -67,11 +67,11 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 						strokeLinecap='round'
 					/>
 				</svg>
-				<span>15 Mar 2021, 12:47 PM</span>
+				<span>{projectInfo.last_update}</span>
 			</div>
-			<p>3</p>
+			<p>{projectInfo.resources.length}</p>
 			<div>
-				<span>15 May 2021</span>
+				<span>{projectInfo.start}</span>
 				<svg
 					width='16'
 					height='16'
@@ -84,9 +84,9 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 						fill='#868FA0'
 					/>
 				</svg>
-				<span>15 Aug 2021</span>
+				<span>{projectInfo.end}</span>
 			</div>
-			<p>US$ 10.5k</p>
+			<p>{projectInfo.estimation}</p>
 		</div>
 	);
 };

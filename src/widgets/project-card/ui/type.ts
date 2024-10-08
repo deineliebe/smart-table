@@ -5,7 +5,7 @@ export type ProjectCardUIProps = {
 };
 
 type TProjectInfo = {
-	id: string;
+	id: number;
 	name: string;
 	PM: string;
 	tag: TTag;

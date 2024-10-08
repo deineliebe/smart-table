@@ -1,6 +1,6 @@
 import { TProfileResponse, TProjectsResponse, TUsersResponse } from './types';
 
-const URL = process.env.REACT_APP_API_URL;
+const URL = 'http://localhost:3001'; //process.env.REACT_APP_API_URL;
 
 const checkResponse = <T>(res: Response): Promise<T> =>
 	res.ok ? res.json() : res.json().then((err) => Promise.reject(err));
@@ -9,7 +9,8 @@ export const getProjectsApi = () =>
 	fetch(`${URL}/projects`)
 		.then((res) => checkResponse<TProjectsResponse>(res))
 		.then((data) => {
-			if (data?.success) return data.data;
+			console.log(data);
+			if (data?.success) return data;
 			return Promise.reject(data);
 		});
 

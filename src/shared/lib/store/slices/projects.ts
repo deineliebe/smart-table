@@ -6,51 +6,44 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 export const getProjects = createAsyncThunk('/projects', getProjectsApi);
 
 export type TProjectState = {
-	projectRequest: boolean;
-	projects: TProject[] | null;
+	isLoading: boolean;
+	projects: TProject[];
 	error: string | null | undefined;
 };
 
-export const initialProject: TProject = {
-	id: '',
-	name: '',
-	PM: '',
-	tag: 'Success',
-	last_update: '',
-	resources: [],
-	start: '',
-	end: '',
-	estimation: ''
-};
-
 export const initialProjectState: TProjectState = {
-	projectRequest: false,
+	isLoading: true,
 	projects: [],
 	error: null
 };
 
 export const projectSlice = createSlice({
-	name: 'project',
+	name: 'projects',
 	initialState: initialProjectState,
 	reducers: {},
 	selectors: {
-		getProjectData: (state) => state
+		getProjectData: (state) => state.projects,
+		getLoadingStatus: (state) => state.isLoading
 	},
 	extraReducers: (builder) => {
 		builder
 			.addCase(getProjects.pending, (state) => {
+				state.isLoading = true;
 				state.error = null;
 			})
 			.addCase(getProjects.rejected, (state, action) => {
+				state.isLoading = false;
 				state.error = action.error.message;
 			})
 			.addCase(getProjects.fulfilled, (state, action) => {
-				state.projects = action.payload;
+				state.isLoading = false;
+				state.projects = action.payload.data;
+				state.error = null;
 			});
 	}
 });
 
 export const {} = projectSlice.actions;
 
-export const { getProjectData } = projectSlice.selectors;
+export const { getProjectData, getLoadingStatus } = projectSlice.selectors;
 export const projectReducer = projectSlice.reducer;

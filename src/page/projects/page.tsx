@@ -1,17 +1,29 @@
 import { FC, useEffect } from 'react';
 import { Pagination } from '@/widgets/pagination';
-import { useDispatch } from '@/shared/lib/store/store';
-import { getProjects } from '@/shared/lib/store/slices/projects';
+import { useDispatch, useSelector } from '@/shared/lib/store/store';
+import {
+	getLoadingStatus,
+	getProjects
+} from '@/shared/lib/store/slices/projects';
+import { ProjectsList } from '@/widgets/project-list';
 
 const Projects: FC = () => {
 	const handleGetProjects = () => {
-		console.log(dispatch(getProjects()));
+		dispatch(getProjects());
 	};
 	const dispatch = useDispatch();
 	useEffect(handleGetProjects, []);
+	const areProjectsLoading: boolean = useSelector(getLoadingStatus);
 	return (
 		<>
-			<Pagination />
+			{areProjectsLoading ? (
+				<Pagination />
+			) : (
+				<>
+					<ProjectsList />
+					<Pagination />
+				</>
+			)}
 		</>
 	);
 };

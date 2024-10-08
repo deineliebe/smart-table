@@ -16,7 +16,7 @@ export type TTag =
 	| 'Inactive';
 
 export type TProject = {
-	id: string;
+	id: number;
 	name: string;
 	PM: string;
 	tag: TTag;
