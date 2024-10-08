@@ -1,0 +1,29 @@
+.button {
+	gap: 8px;
+	color: #171c26;
+	background: #ffffff;
+	border: none;
+	border-radius: 4px;
+	box-shadow:
+		0 1px 1px rgb(0 0 0 / 10%),
+		0 0 0 1px rgb(70 79 96 / 16%);
+}
+
+.button:active {
+	border-radius: 4px;
+	box-shadow:
+		0 1px 1px rgb(0 0 0 / 10%),
+		0 0 0 1px rgb(70 79 96 / 32%);
+}
+
+.button-small {
+	padding: 2px 4px;
+}
+
+.button-medium {
+	padding: 6px 12px;
+}
+
+.button-large {
+	padding: 6px 12px;
+}

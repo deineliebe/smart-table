@@ -1,0 +1,15 @@
+.form {
+	position: relative;
+	display: flex;
+	align-items: center;
+	color: #a1a9b8;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 143;
+	background: #f7f8fa;
+	border-radius: 12px;
+	box-shadow:
+		0 0 0 1px rgb(136 143 170 / 10%),
+		0 30px 70px rgb(26 34 64 / 15%),
+		0 10px 30px rgb(0 0 0 / 20%);
+}

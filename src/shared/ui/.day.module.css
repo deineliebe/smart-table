@@ -1,0 +1,24 @@
+.day {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	gap: 10px;
+	width: 10px;
+	height: 20px;
+	text-align: center;
+	letter-spacing: 0.02em;
+	color: #464f60;
+	border-radius: 6px;
+}
+
+.day:hover {
+	background: #ededfc;
+	color: #171c26;
+}
+
+.day:active {
+	color: #ffffff;
+	background: #5e5adb;
+}
