@@ -2,13 +2,18 @@ import './header.css';
 import headingStyles from '../../../shared/ui/heading.module.css';
 import Image from 'next/image';
 import avatar from '../../../shared/lib/images/Rectangle 1650.jpg';
+import { useSelector } from '@/shared/lib/store/store';
+import { getProjectData } from '@/shared/lib/store/slices/projects';
+import { TProject } from '@/shared/model/types';
 
 const Header = () => {
+	const projects: TProject[] = useSelector(getProjectData);
+
 	return (
 		<div className='header'>
 			<div className='header-block'>
 				<p className={headingStyles.mainHeading}>Projects</p>
-				<p className='header-number'>0</p>
+				<p className='header-number'>{projects.length}</p>
 			</div>
 			<div className='header-block'>
 				<svg

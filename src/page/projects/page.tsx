@@ -6,6 +6,7 @@ import {
 	getProjects
 } from '@/shared/lib/store/slices/projects';
 import { ProjectsList } from '@/widgets/project-list';
+import { Header } from '@/widgets/header';
 
 const Projects: FC = () => {
 	const handleGetProjects = () => {
@@ -20,6 +21,7 @@ const Projects: FC = () => {
 				<Pagination />
 			) : (
 				<>
+					<Header />
 					<ProjectsList />
 					<Pagination />
 				</>

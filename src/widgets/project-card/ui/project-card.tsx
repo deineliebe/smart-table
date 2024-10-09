@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 
 import './project-card.css';
 import { ProjectCardUIProps } from './type';
+import Link from 'next/link';
 
 export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 	console.log(projectInfo);
@@ -27,8 +28,10 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 				/>
 			</svg>
 			<p>{projectInfo.id}</p>
-			<p>{projectInfo.name}</p>
-			<p>{projectInfo.PM}</p>
+			<Link className='project-name' href={`/project:${projectInfo.id}`}>
+				{projectInfo.name}
+			</Link>
+			<p>Photo</p>
 			<div>
 				<svg
 					width='6'
@@ -69,7 +72,7 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 				</svg>
 				<span>{projectInfo.last_update}</span>
 			</div>
-			<p>{projectInfo.resources.length}</p>
+			<p className='project-resorces'>{projectInfo.resources.length}</p>
 			<div>
 				<span>{projectInfo.start}</span>
 				<svg
