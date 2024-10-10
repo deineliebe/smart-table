@@ -9,7 +9,6 @@ export const getProjectsApi = () =>
 	fetch(`${URL}/projects`)
 		.then((res) => checkResponse<TProjectsResponse>(res))
 		.then((data) => {
-			console.log(data);
 			if (data?.success) return data;
 			return Promise.reject(data);
 		});

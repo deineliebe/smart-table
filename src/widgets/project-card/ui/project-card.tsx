@@ -5,10 +5,18 @@ import { ProjectCardUIProps } from './type';
 import Link from 'next/link';
 
 export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
-	console.log(projectInfo);
 	return (
 		<div className='project'>
-			<input type='checkbox' name='project' value='choose-project'></input>
+			<label>
+				<input
+					type='checkbox'
+					className='visually-hidden'
+					name='project'
+					value='choose-project'
+				></input>
+				<span></span>
+				<span className='visually-hidden'>а</span>
+			</label>
 			<svg
 				width='16'
 				height='16'
@@ -44,7 +52,7 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 				</svg>
 				<span>{projectInfo.tag}</span>
 			</div>
-			<div>
+			<div className='project-update'>
 				<svg
 					width='16'
 					height='16'
@@ -72,9 +80,32 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 				</svg>
 				<span>{projectInfo.last_update}</span>
 			</div>
-			<p className='project-resorces'>{projectInfo.resources.length}</p>
-			<div>
-				<span>{projectInfo.start}</span>
+			<p
+				className={`project-resorces ${!projectInfo.resources.length && 'project-resources-empty'}`}
+			>
+				{projectInfo.resources.length ? (
+					projectInfo.resources.length
+				) : (
+					<svg
+						width='14'
+						height='14'
+						viewBox='0 0 14 14'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'
+					>
+						<path
+							fillRule='evenodd'
+							clipRule='evenodd'
+							d='M6.99999 1.75C7.36243 1.75 7.65624 2.04381 7.65624 2.40625V6.34375H11.5937C11.9562 6.34375 12.25 6.63756 12.25 7C12.25 7.36244 11.9562 7.65625 11.5937 7.65625H7.65624V11.5937C7.65624 11.9562 7.36243 12.25 6.99999 12.25C6.63755 12.25 6.34374 11.9562 6.34374 11.5937V7.65625H2.40625C2.04381 7.65625 1.75 7.36244 1.75 7C1.75 6.63756 2.04381 6.34375 2.40625 6.34375H6.34374V2.40625C6.34374 2.04381 6.63755 1.75 6.99999 1.75Z'
+							fill='#464F60'
+						/>
+					</svg>
+				)}
+			</p>
+			<div className='project-timeline'>
+				<span className='project-timeline-date'>
+					{projectInfo.start ? projectInfo.start : '-'}
+				</span>
 				<svg
 					width='16'
 					height='16'
@@ -87,7 +118,9 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 						fill='#868FA0'
 					/>
 				</svg>
-				<span>{projectInfo.end}</span>
+				<span className='project-timeline-date'>
+					{projectInfo.end ? projectInfo.end : '-'}
+				</span>
 			</div>
 			<p>{projectInfo.estimation}</p>
 		</div>
