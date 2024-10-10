@@ -1,4 +1,4 @@
-import { TResource, TTag } from '@/shared/model/types';
+import { TResource, TTagLocal } from '@/shared/model/types';
 
 export type ProjectCardUIProps = {
 	projectInfo: TProjectInfo;
@@ -8,7 +8,7 @@ type TProjectInfo = {
 	id: number;
 	name: string;
 	PM: string;
-	tag: TTag;
+	status: TTagLocal;
 	last_update: string;
 	resources: TResource[];
 	start: string;

@@ -1,44 +1,47 @@
 .tag {
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
 	align-items: center;
 	gap: 6px;
-	width: 79px;
-	height: 20px;
 	padding: 1px 8px;
+	font-weight: 500;
 	font-size: 12px;
-	letter-spacing: 0.03em;
-	background: #e1fcef;
+	line-height: 1.5;
 	border-radius: 4px;
+	justify-self: start;
 }
 
 .tag-success {
 	color: #14804a;
 	background: #e1fcef;
+	fill: #14804a;
 }
 
 .tag-warning {
 	color: #aa5b00;
 	background: #fcf2e6;
+	fill: #aa5b00;
 }
 
 .tag-error {
 	color: #d1293d;
 	background: #ffedef;
+	fill: #d1293d;
 }
 
 .tag-active {
 	color: #5e5adb;
 	background: #ededfc;
+	fill: #5e5adb;
 }
 
 .tag-info {
 	color: #2264e5;
 	background: #ebf0fa;
+	fill: #2264e5;
 }
 
 .tag-inactive {
 	color: #5a6376;
 	background: #e9edf5;
+	fill: #5a6376;
 }

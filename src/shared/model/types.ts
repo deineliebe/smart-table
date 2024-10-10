@@ -15,11 +15,13 @@ export type TTag =
 	| 'Info'
 	| 'Inactive';
 
+export type TTagLocal = 'On track' | 'Potential risk' | 'On hold' | 'At risk';
+
 export type TProject = {
 	id: number;
 	name: string;
 	PM: string;
-	tag: TTag;
+	status: TTagLocal;
 	last_update: string;
 	resources: TResource[];
 	start: string;
