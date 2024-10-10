@@ -6,12 +6,13 @@ import {
 	getProjects
 } from '@/shared/lib/store/slices/projects';
 import { ProjectsList } from '@/widgets/project-list';
+import { Header } from '@/widgets/header';
 
 const Projects: FC = () => {
+	const dispatch = useDispatch();
 	const handleGetProjects = () => {
 		dispatch(getProjects());
 	};
-	const dispatch = useDispatch();
 	useEffect(handleGetProjects, []);
 	const areProjectsLoading: boolean = useSelector(getLoadingStatus);
 	return (
@@ -20,6 +21,7 @@ const Projects: FC = () => {
 				<Pagination />
 			) : (
 				<>
+					<Header />
 					<ProjectsList />
 					<Pagination />
 				</>
