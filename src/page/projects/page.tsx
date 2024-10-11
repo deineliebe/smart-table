@@ -7,6 +7,7 @@ import {
 } from '@/shared/lib/store/slices/projects';
 import { ProjectsList } from '@/widgets/project-list';
 import { Header } from '@/widgets/header';
+import { ProjectSubHeader } from '@/widgets/project-subheader';
 
 const Projects: FC = () => {
 	const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const Projects: FC = () => {
 			) : (
 				<>
 					<Header />
+					<ProjectSubHeader />
 					<ProjectsList />
 					<Pagination />
 				</>

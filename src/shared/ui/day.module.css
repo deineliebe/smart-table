@@ -3,19 +3,19 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 10px;
 	gap: 10px;
 	width: 10px;
 	height: 20px;
-	text-align: center;
-	letter-spacing: 0.02em;
+	padding: 10px;
 	color: #464f60;
+	letter-spacing: 0.02em;
+	text-align: center;
 	border-radius: 6px;
 }
 
 .day:hover {
-	background: #ededfc;
 	color: #171c26;
+	background: #ededfc;
 }
 
 .day:active {

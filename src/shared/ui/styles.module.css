@@ -4,44 +4,49 @@
 	--gray-alpha-100: rgba(var(--gray-rgb), 0.05);
 	--button-primary-hover: #383838;
 	--button-secondary-hover: #f2f2f2;
-	margin: var(--header-width, 56px) 0 0 var(--sidebar-width, 64px);
+	margin: var(--header-width, 57px) 0 0 var(--sidebar-width, 64px);
 }
 
 .canBeShadowed:focus {
+	outline: none;
 	box-shadow: 0 0 0 4px #5e5adb66;
+}
+
+.white:focus {
+	color: #171c26;
 }
 
 .white:disabled {
 	color: #868fa0;
-	background: #f7f9fc;
+	background-color: #f7f9fc;
 }
 
 .red {
 	color: #ffffff;
-	background: #d1293d;
+	background-color: #d1293d;
 }
 
 .red:hover {
-	background: #d1293d;
+	background-color: #d1293d;
 }
 
 .red:disabled {
 	color: #fcc5cb;
-	background: #f76f7f;
+	background-color: #f76f7f;
 }
 
 .blue {
 	color: #ffffff;
-	background: #4945c4;
+	background-color: #5e5adb;
 }
 
 .blue:hover {
-	background: #4945c4;
+	background-color: #4945c4;
 }
 
 .blue:disabled {
 	color: #ededfc;
-	background: #9e9bf5;
+	background-color: #9e9bf5;
 }
 
 .upperCase {

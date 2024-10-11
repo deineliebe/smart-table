@@ -53,6 +53,15 @@ input[type='checkbox']:checked + span {
 
 .project-name {
 	text-decoration: none;
+	outline: none;
+}
+
+.project-name:hover {
+	text-decoration: underline;
+}
+
+.project-name:focus {
+	text-decoration: underline;
 }
 
 .project-project-manager {
