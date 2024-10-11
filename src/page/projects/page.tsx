@@ -18,12 +18,12 @@ const Projects: FC = () => {
 	const areProjectsLoading: boolean = useSelector(getLoadingStatus);
 	return (
 		<>
+			<Header />
+			<ProjectSubHeader />
 			{areProjectsLoading ? (
 				<Pagination />
 			) : (
 				<>
-					<Header />
-					<ProjectSubHeader />
 					<ProjectsList />
 					<Pagination />
 				</>

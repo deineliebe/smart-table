@@ -18,7 +18,7 @@ const Pagination = () => {
 				<p>Rows per page:</p>
 				<p>20</p>
 				<button
-					className={`${buttonStyles.button} ${buttonStyles['button-small']} ${styles.canBeShadowed} disabled`}
+					className={`${buttonStyles.button} ${buttonStyles['button-small']} ${styles.isShadowed} ${styles.isClicked} disabled`}
 				>
 					<svg
 						width='16'
@@ -38,7 +38,7 @@ const Pagination = () => {
 				</button>
 				<p>1/1</p>
 				<button
-					className={`${buttonStyles.button} ${buttonStyles['button-small']} ${styles.canBeShadowed} disabled`}
+					className={`${buttonStyles.button} ${buttonStyles['button-small']} ${styles.isShadowed} ${styles.isClicked} disabled`}
 				>
 					<svg
 						width='16'

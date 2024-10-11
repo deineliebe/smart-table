@@ -1,5 +1,6 @@
 import './header.css';
 import headingStyles from '../../../shared/ui/heading.module.css';
+import styles from '../../../shared/ui/styles.module.css';
 import Image from 'next/image';
 import avatar from '../../../shared/lib/images/Rectangle 1650.jpg';
 import { useSelector } from '@/shared/lib/store/store';
@@ -17,6 +18,7 @@ const Header = () => {
 			</div>
 			<div className='header-block'>
 				<svg
+					className={`${styles.isClicked}`}
 					id='notification'
 					width='25'
 					height='26'
@@ -95,6 +97,7 @@ const Header = () => {
 					</defs>
 				</svg>
 				<svg
+					className={`${styles.isClicked}`}
 					xmlns='http://www.w3.org/2000/svg'
 					width='24'
 					height='24'

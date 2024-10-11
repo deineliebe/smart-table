@@ -7,7 +7,7 @@ export const ProjectSubHeader = () => {
 	return (
 		<div className='subheader'>
 			<button
-				className={`${buttonStyles.button} ${styles.canBeShadowed} subheader-calendar-button`}
+				className={`${buttonStyles.button} ${styles.isShadowed} ${styles.isClicked} subheader-calendar-button`}
 			>
 				<svg
 					width='16'
@@ -26,12 +26,12 @@ export const ProjectSubHeader = () => {
 			</button>
 			<div className='subheader-input'>
 				<input
-					className={`search ${inputStyles.input} ${inputStyles['input-search-left']} ${styles.canBeShadowed}`}
+					className={`search ${inputStyles.input} ${inputStyles['input-search-left']} ${styles.isShadowed}`}
 					placeholder='Search'
 				></input>
 			</div>
 			<button
-				className={`${buttonStyles.button} ${styles.blue} ${styles.canBeShadowed} ${buttonStyles['button-large-plus']}`}
+				className={`${buttonStyles.button} ${styles.blue} ${styles.isShadowed} ${buttonStyles['button-large-plus']} ${styles.isClicked}`}
 			>
 				<span>New project</span>
 			</button>

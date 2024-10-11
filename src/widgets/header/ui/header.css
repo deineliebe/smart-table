@@ -10,10 +10,6 @@
 	border: 1px solid #e9edf5;
 }
 
-.header svg {
-	cursor: pointer;
-}
-
 .header-avatar {
 	border-radius: 50%;
 }

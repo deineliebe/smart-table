@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 
+import styles from '../../../shared/ui/styles.module.css';
 import './project-card.css';
 import { ProjectCardUIProps } from './type';
 import Link from 'next/link';
@@ -8,7 +9,7 @@ import { Tag } from '@/widgets/tag/model';
 export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 	return (
 		<div className='project'>
-			<label>
+			<label className={`${styles.isClicked}`}>
 				<input
 					type='checkbox'
 					className='visually-hidden'
@@ -37,7 +38,10 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 				/>
 			</svg>
 			<p>{projectInfo.id}</p>
-			<Link className='project-name' href={`/project:${projectInfo.id}`}>
+			<Link
+				className={`project-name ${styles.isClicked}`}
+				href={`/project:${projectInfo.id}`}
+			>
 				{projectInfo.name}
 			</Link>
 			<p className='project-project-manager'>PM</p>

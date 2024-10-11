@@ -1,4 +1,5 @@
 import './sidebar.css';
+import styles from '../../../shared/ui/styles.module.css';
 
 const Sidebar = () => {
 	return (
@@ -21,7 +22,7 @@ const Sidebar = () => {
 				<path d='M40 35L20 1L33.3333 37L40 35Z' fill='#9E9BF5' />
 			</svg>
 			<svg
-				className='sidebar-element active'
+				className={`sidebar-element ${styles.isClicked} active`}
 				width='24'
 				height='24'
 				viewBox='0 0 24 24'
@@ -36,7 +37,7 @@ const Sidebar = () => {
 				/>
 			</svg>
 			<svg
-				className='sidebar-element'
+				className={`sidebar-element ${styles.isClicked}`}
 				width='24'
 				height='24'
 				viewBox='0 0 24 24'
