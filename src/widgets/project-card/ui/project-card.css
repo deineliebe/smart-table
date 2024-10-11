@@ -13,25 +13,6 @@
 	background-color: #ededfc;
 }
 
-.project-name {
-	text-decoration: none;
-}
-
-.project-resorces {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	padding: 2px 7px;
-	background: #e9edf5;
-	border-radius: 6px;
-	place-self: center;
-}
-
-.project-resources-empty {
-	padding: 5px;
-	border: 1px dashed #807cea;
-}
-
 .visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -70,6 +51,50 @@ input[type='checkbox']:checked + span {
 		0 0 0 1px #5e5adb;
 }
 
+.project-name {
+	text-decoration: none;
+	outline: none;
+}
+
+.project-name:hover {
+	text-decoration: underline;
+}
+
+.project-name:focus {
+	text-decoration: underline;
+}
+
+.project-project-manager {
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	width: 24px;
+	height: 24px;
+	color: #5e5adb;
+	font-weight: 600;
+	font-size: 10px;
+	text-align: center;
+	background: #ededfc;
+	border: 1px solid rgb(210 213 220 / 50%);
+	border-radius: 6px;
+	place-content: center;
+}
+
+.project-resorces {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 2px 7px;
+	background: #e9edf5;
+	border-radius: 6px;
+	place-self: center;
+}
+
+.project-resources-empty {
+	padding: 5px;
+	border: 1px dashed #807cea;
+}
+
 .project-timeline {
 	display: flex;
 	flex-direction: row;
@@ -82,7 +107,7 @@ input[type='checkbox']:checked + span {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	gap: 2px;
+	gap: 6px;
 }
 
 .project-timeline-date {

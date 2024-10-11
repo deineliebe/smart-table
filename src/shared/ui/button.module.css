@@ -10,7 +10,6 @@
 }
 
 .button:active {
-	border-radius: 4px;
 	box-shadow:
 		0 1px 1px rgb(0 0 0 / 10%),
 		0 0 0 1px rgb(70 79 96 / 32%);
@@ -20,10 +19,22 @@
 	padding: 2px 4px;
 }
 
-.button-medium {
+.button-large {
 	padding: 6px 12px;
 }
 
-.button-large {
+.button-small-plus {
+	padding: 2px 4px;
+	padding-left: 36px;
+	background-image: url('../lib/icons/add-white.svg');
+	background-repeat: no-repeat;
+	background-position: 2px 50%;
+}
+
+.button-large-plus {
 	padding: 6px 12px;
+	padding-left: 36px;
+	background-image: url('../lib/icons/add-white.svg');
+	background-repeat: no-repeat;
+	background-position: 12px 50%;
 }

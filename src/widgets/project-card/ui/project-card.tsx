@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import './project-card.css';
 import { ProjectCardUIProps } from './type';
 import Link from 'next/link';
+import { Tag } from '@/widgets/tag/model';
 
 export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 	return (
@@ -39,19 +40,8 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 			<Link className='project-name' href={`/project:${projectInfo.id}`}>
 				{projectInfo.name}
 			</Link>
-			<p>Photo</p>
-			<div>
-				<svg
-					width='6'
-					height='6'
-					viewBox='0 0 6 6'
-					fill='none'
-					xmlns='http://www.w3.org/2000/svg'
-				>
-					<rect width='6' height='6' rx='2' fill='#38A06C' />
-				</svg>
-				<span>{projectInfo.tag}</span>
-			</div>
+			<p className='project-project-manager'>PM</p>
+			<Tag tag={projectInfo.status} />
 			<div className='project-update'>
 				<svg
 					width='16'
