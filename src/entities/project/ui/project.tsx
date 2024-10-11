@@ -1,5 +1,3 @@
-import './project.css';
-
 const Project = () => {
 	console.log(10);
 };

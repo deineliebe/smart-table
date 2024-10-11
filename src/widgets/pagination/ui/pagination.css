@@ -25,3 +25,27 @@
 .pagination-block p {
 	display: block;
 }
+
+.pagination-select {
+	display: flex;
+	padding-right: 14px;
+	color: inherit;
+	font: inherit;
+	background-image: url('../../../shared/lib/icons/down.svg');
+	background-repeat: no-repeat;
+	background-position: center right;
+	border: none;
+	outline: none;
+}
+
+.pagination-select-option {
+	display: flex;
+	gap: 8px;
+	padding: 4px 10px;
+	text-align: center;
+}
+
+.pagination-select-option:hover {
+	background: #5e5adb;
+	border-radius: 4px;
+}

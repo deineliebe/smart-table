@@ -16,7 +16,32 @@ const Pagination = () => {
 			</div>
 			<div className='pagination-block'>
 				<p>Rows per page:</p>
-				<p>20</p>
+				<select
+					className={`${styles.select} pagination-select`}
+					name='projects-on-page'
+				>
+					<option className='pagination-select-option' value=''>
+						5
+					</option>
+					<option className='pagination-select-option' value=''>
+						10
+					</option>
+					<option className='pagination-select-option' value=''>
+						15
+					</option>
+					<option className='pagination-select-option' value=''>
+						20
+					</option>
+					<option className='pagination-select-option' value=''>
+						30
+					</option>
+					<option className='pagination-select-option' value=''>
+						40
+					</option>
+					<option className='pagination-select-option' value=''>
+						50
+					</option>
+				</select>
 				<button
 					className={`${buttonStyles.button} ${buttonStyles['button-small']} ${styles.isShadowed} ${styles.isClicked} disabled`}
 				>

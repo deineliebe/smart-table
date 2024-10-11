@@ -20,6 +20,7 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 				<span className='visually-hidden'>а</span>
 			</label>
 			<svg
+				className={`${styles.isClicked}`}
 				width='16'
 				height='16'
 				viewBox='0 0 16 16'

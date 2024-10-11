@@ -8,6 +8,12 @@
 	cursor: url('../lib/icons/Arrow.svg'), auto;
 }
 
+.select {
+	appearance: none;
+	appearance: none;
+	appearance: none;
+}
+
 .isClicked {
 	cursor: url('../lib/icons/Clicker.svg'), auto;
 }
