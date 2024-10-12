@@ -9,7 +9,6 @@ export const ProjectsList: FC = () => {
 	const projectByDate = [...projects].sort(
 		(a, b) => new Date(b.start).getTime() - new Date(a.start).getTime()
 	);
-
 	return <ProjectsListUI projectByDate={projectByDate} />;
 };
 

@@ -18,10 +18,17 @@
 
 .sidebar-element {
 	padding: 8px;
+	border: 1.5px solid transparent;
+	border-radius: 6px;
+}
+
+.sidebar-element:not(.active):hover {
+	background: #2a278f;
+	border: 1.5px solid #ffffff;
 }
 
 .active {
 	background: #0d0b45;
-	border: 1px solid #2a278f;
-	border-radius: 6px;
+	border: 1.5px solid #2a278f;
+	fill: #ffffff;
 }

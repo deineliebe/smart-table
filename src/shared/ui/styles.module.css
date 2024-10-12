@@ -9,9 +9,28 @@
 }
 
 .select {
+	display: flex;
+	color: inherit;
+	font: inherit;
+	background-image: url('../../shared/lib/icons/down.svg');
+	background-repeat: no-repeat;
+	background-position: center right;
+	border: none;
+	outline: none;
 	appearance: none;
-	appearance: none;
-	appearance: none;
+}
+
+.select option {
+	display: flex;
+	gap: 8px;
+	padding: 4px 10px;
+	text-align: center;
+}
+
+.select option:hover {
+	position: relative;
+	background: #5e5adb;
+	border-radius: 4px;
 }
 
 .isClicked {

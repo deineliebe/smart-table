@@ -8,6 +8,7 @@ import {
 import { ProjectsList } from '@/widgets/project-list';
 import { Header } from '@/widgets/header';
 import { ProjectSubHeader } from '@/widgets/project-subheader';
+import { ProjectsListNav } from '@/widgets/project-list-nav';
 
 const Projects: FC = () => {
 	const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const Projects: FC = () => {
 		<>
 			<Header />
 			<ProjectSubHeader />
+			<ProjectsListNav />
 			{areProjectsLoading ? (
 				<Pagination />
 			) : (
