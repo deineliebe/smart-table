@@ -12,10 +12,9 @@ import { ProjectsListNav } from '@/widgets/project-list-nav';
 
 const Projects: FC = () => {
 	const dispatch = useDispatch();
-	const handleGetProjects = () => {
+	useEffect(() => {
 		dispatch(getProjects());
-	};
-	useEffect(handleGetProjects, []);
+	}, []);
 	const areProjectsLoading: boolean = useSelector(getLoadingStatus);
 	return (
 		<>

@@ -15,7 +15,12 @@ export type TTag =
 	| 'Info'
 	| 'Inactive';
 
-export type TTagLocal = 'On track' | 'Potential risk' | 'On hold' | 'At risk';
+export type TTagLocal =
+	| 'On track'
+	| 'Potential risk'
+	| 'On hold'
+	| 'At risk'
+	| 'Archived';
 
 export type TProject = {
 	id: number;

@@ -2,8 +2,12 @@ import './projectSubHeader.css';
 import styles from '../../../shared/ui/styles.module.css';
 import buttonStyles from '../../../shared/ui/button.module.css';
 import inputStyles from '../../../shared/ui/input.module.css';
+import { useSelector } from '@/shared/lib/store/store';
+import { getProjectData } from '@/shared/lib/store/slices/projects';
+import { TProject } from '@/shared/model/types';
 
 export const ProjectSubHeader = () => {
+	const projects: TProject[] = useSelector(getProjectData);
 	return (
 		<div className='subheader'>
 			<div className='subheader-upper-part'>
@@ -64,31 +68,54 @@ export const ProjectSubHeader = () => {
 						className={`subheader-pagination-element subheader-pagination-element-active ${styles.isClicked}`}
 					>
 						<span>All</span>
-						<span className='subheader-pagination-number'>0</span>
+						<span className='subheader-pagination-number'>
+							{projects?.length}
+						</span>
 					</button>
 					<button
 						className={`subheader-pagination-element ${styles.isClicked}`}
 					>
 						<span>Risk</span>
-						<span className='subheader-pagination-number'>0</span>
+						<span className='subheader-pagination-number'>
+							{
+								projects?.filter((project) => project.status === 'At risk')
+									.length
+							}
+						</span>
 					</button>
 					<button
 						className={`subheader-pagination-element ${styles.isClicked}`}
 					>
 						<span>On hold</span>
-						<span className='subheader-pagination-number'>0</span>
+						<span className='subheader-pagination-number'>
+							{
+								projects?.filter((project) => project.status === 'On hold')
+									.length
+							}
+						</span>
 					</button>
 					<button
 						className={`subheader-pagination-element ${styles.isClicked}`}
 					>
 						<span>Potential risk</span>
-						<span className='subheader-pagination-number'>0</span>
+						<span className='subheader-pagination-number'>
+							{
+								projects?.filter(
+									(project) => project.status === 'Potential risk'
+								).length
+							}
+						</span>
 					</button>
 					<button
 						className={`subheader-pagination-element ${styles.isClicked}`}
 					>
 						<span>On track</span>
-						<span className='subheader-pagination-number'>0</span>
+						<span className='subheader-pagination-number'>
+							{
+								projects?.filter((project) => project.status === 'On track')
+									.length
+							}
+						</span>
 					</button>
 					<svg
 						width='1'
@@ -108,7 +135,12 @@ export const ProjectSubHeader = () => {
 						className={`subheader-pagination-element ${styles.isClicked}`}
 					>
 						<span>Archived</span>
-						<span className='subheader-pagination-number'>0</span>
+						<span className='subheader-pagination-number'>
+							{
+								projects?.filter((project) => project.status === 'Archived')
+									.length
+							}
+						</span>
 					</button>
 				</div>
 			</div>
