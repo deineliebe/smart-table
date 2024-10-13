@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import './addNewProjectForm.css';
 import buttonStyles from '../../../shared/ui/button.module.css';
-import styles from '../../../shared/ui/styles.module.css';
 import inputStyles from '../../../shared/ui/input.module.css';
+import styles from '../../../shared/ui/styles.module.css';
 
 const AddNewFormUI: FC = ({}) => (
 	<form className='form-add-project'>
@@ -27,9 +27,36 @@ const AddNewFormUI: FC = ({}) => (
 					Project manager (PM)
 				</label>
 				<div id='pms' className='form-add-project-buttons-bar'>
-					<button>Roger Vaccaro</button>
-					<button>Tatiana Dias</button>
-					<button>Leo Gouse</button>
+					<label htmlFor='tab1' className='form-add-project-pm-option'>
+						<input
+							type='radio'
+							name='pm-tab'
+							id='pm1'
+							className={`${styles['visually-hidden']}`}
+							checked
+						/>
+						Roger Vaccaro
+					</label>
+					<label htmlFor='pm2' className='form-add-project-pm-option'>
+						<input
+							type='radio'
+							name='pm-tab'
+							id='pm2'
+							className={`${styles['visually-hidden']}`}
+							checked
+						/>
+						Tatiana Dias
+					</label>
+					<label htmlFor='pm3' className='form-add-project-pm-option'>
+						<input
+							type='radio'
+							name='pm-tab'
+							id='pm3'
+							className={`${styles['visually-hidden']}`}
+							checked
+						/>
+						Leo Gouse
+					</label>
 				</div>
 			</fieldset>
 			<fieldset className='modal-add-project-field'>
@@ -38,36 +65,43 @@ const AddNewFormUI: FC = ({}) => (
 				</label>
 				<div id='resources' className='form-add-project-buttons-resource'>
 					<button
+						type='button'
 						className={`${buttonStyles.button} ${buttonStyles['button-medium']} ${styles.white}`}
 					>
 						UX/UI Design
 					</button>
 					<button
+						type='button'
 						className={`${buttonStyles.button} ${buttonStyles['button-medium']} ${styles.white}`}
 					>
 						Frontend
 					</button>
 					<button
+						type='button'
 						className={`${buttonStyles.button} ${buttonStyles['button-medium']} ${styles.white}`}
 					>
 						Backend
 					</button>
 					<button
+						type='button'
 						className={`${buttonStyles.button} ${buttonStyles['button-medium']} ${styles.white}`}
 					>
 						Full Stack
 					</button>
 					<button
+						type='button'
 						className={`${buttonStyles.button} ${buttonStyles['button-medium']} ${styles.white}`}
 					>
 						Graphic Designer
 					</button>
 					<button
+						type='button'
 						className={`${buttonStyles.button} ${buttonStyles['button-medium']} ${styles.white}`}
 					>
 						Web Designer
 					</button>
 					<button
+						type='button'
 						className={`${buttonStyles.button} ${buttonStyles['button-medium']} ${styles.white}`}
 					>
 						QA
@@ -78,12 +112,26 @@ const AddNewFormUI: FC = ({}) => (
 				<label className='form-add-project-label' htmlFor='timeline'>
 					Project timeline
 				</label>
-				<div id='timeline'>
-					<select>
+				<div id='timeline' className='modal-add-project-timeline'>
+					<select className='form-add-project-select'>
 						<option>Custom</option>
 					</select>
-					<div>
-						<input type='text' id='start_date' name='start_date' />
+					<div className='modal-add-project-timestamps'>
+						<svg
+							width='2'
+							height='48'
+							viewBox='0 0 2 48'
+							fill='none'
+							xmlns='http://www.w3.org/2000/svg'
+						>
+							<path d='M1 0V48' stroke='#E9EDF5' />
+						</svg>
+						<input
+							type='text'
+							id='start_date'
+							name='start_date'
+							className={`${inputStyles.input} modal-add-project-timestamp`}
+						/>
 						<svg
 							width='16'
 							height='16'
@@ -99,7 +147,12 @@ const AddNewFormUI: FC = ({}) => (
 								strokeLinejoin='round'
 							/>
 						</svg>
-						<input type='text' id='end_date' name='end_date' />
+						<input
+							type='text'
+							id='end_date'
+							name='end_date'
+							className={`${inputStyles.input} modal-add-project-timestamp`}
+						/>
 					</div>
 				</div>
 			</fieldset>

@@ -25,7 +25,7 @@ const Projects: FC = () => {
 	const [visibleProjects, setVisibleProjects] = useState(projects);
 	const [projectsOnPage, setProjectsOnPage] = useState(5);
 	const [page, setPage] = useState(1);
-	const [showModal, setShowModal] = useState(true);
+	const [showModal, setShowModal] = useState(false);
 	useEffect(() => {
 		setFilteredProjects(projects);
 	}, [areProjectsLoading]);

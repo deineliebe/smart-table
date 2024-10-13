@@ -12,12 +12,12 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 			<label className={`${styles.isClicked}`}>
 				<input
 					type='checkbox'
-					className='visually-hidden'
+					className={`${styles['visually-hidden']}`}
 					name='project'
 					value='choose-project'
 				></input>
 				<span></span>
-				<span className='visually-hidden'>а</span>
+				<span className={`${styles['visually-hidden']}`}>а</span>
 			</label>
 			<svg
 				className={`${styles.isClicked}`}
