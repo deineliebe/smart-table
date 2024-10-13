@@ -6,6 +6,14 @@ import { ListProjectProps } from '@/shared/model/types';
 import { FC } from 'react';
 
 const ProjectSubHeader: FC<ListProjectProps> = ({ projects }) => {
+	const onTabClick = (evt: React.MouseEvent) => {
+		document.body
+			.querySelector('.subheader-pagination-element-active')
+			?.classList.remove('subheader-pagination-element-active');
+		(evt?.target as HTMLElement)
+			?.closest('button')
+			?.classList?.add('subheader-pagination-element-active');
+	};
 	return (
 		<section className='subheader'>
 			<div className='subheader-upper-part'>
@@ -64,6 +72,7 @@ const ProjectSubHeader: FC<ListProjectProps> = ({ projects }) => {
 				<div className='subheader-pagination'>
 					<button
 						className={`subheader-pagination-element subheader-pagination-element-active ${styles.isClicked}`}
+						onClick={onTabClick}
 					>
 						<span>All</span>
 						<span className='subheader-pagination-number'>
@@ -72,6 +81,7 @@ const ProjectSubHeader: FC<ListProjectProps> = ({ projects }) => {
 					</button>
 					<button
 						className={`subheader-pagination-element ${styles.isClicked}`}
+						onClick={onTabClick}
 					>
 						<span>Risk</span>
 						<span className='subheader-pagination-number'>
@@ -83,6 +93,7 @@ const ProjectSubHeader: FC<ListProjectProps> = ({ projects }) => {
 					</button>
 					<button
 						className={`subheader-pagination-element ${styles.isClicked}`}
+						onClick={onTabClick}
 					>
 						<span>On hold</span>
 						<span className='subheader-pagination-number'>
@@ -94,6 +105,7 @@ const ProjectSubHeader: FC<ListProjectProps> = ({ projects }) => {
 					</button>
 					<button
 						className={`subheader-pagination-element ${styles.isClicked}`}
+						onClick={onTabClick}
 					>
 						<span>Potential risk</span>
 						<span className='subheader-pagination-number'>
@@ -106,6 +118,7 @@ const ProjectSubHeader: FC<ListProjectProps> = ({ projects }) => {
 					</button>
 					<button
 						className={`subheader-pagination-element ${styles.isClicked}`}
+						onClick={onTabClick}
 					>
 						<span>On track</span>
 						<span className='subheader-pagination-number'>
@@ -131,6 +144,7 @@ const ProjectSubHeader: FC<ListProjectProps> = ({ projects }) => {
 					</svg>
 					<button
 						className={`subheader-pagination-element ${styles.isClicked}`}
+						onClick={onTabClick}
 					>
 						<span>Archived</span>
 						<span className='subheader-pagination-number'>

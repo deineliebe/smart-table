@@ -6,7 +6,7 @@ import { ProjectCard } from '@/widgets/project-card/model';
 export const ProjectsListUI: FC<ProjectsListUIProps> = ({ projectByDate }) => (
 	<section>
 		{projectByDate.map((project) => (
-			<ProjectCard project={project} key={1} />
+			<ProjectCard project={project} key={project.id} />
 		))}
 	</section>
 );
