@@ -2,14 +2,12 @@ import './projectSubHeader.css';
 import styles from '../../../shared/ui/styles.module.css';
 import buttonStyles from '../../../shared/ui/button.module.css';
 import inputStyles from '../../../shared/ui/input.module.css';
-import { useSelector } from '@/shared/lib/store/store';
-import { getProjectData } from '@/shared/lib/store/slices/projects';
-import { TProject } from '@/shared/model/types';
+import { ListProjectProps } from '@/shared/model/types';
+import { FC } from 'react';
 
-export const ProjectSubHeader = () => {
-	const projects: TProject[] = useSelector(getProjectData);
+const ProjectSubHeader: FC<ListProjectProps> = ({ projects }) => {
 	return (
-		<div className='subheader'>
+		<section className='subheader'>
 			<div className='subheader-upper-part'>
 				<button
 					className={`${buttonStyles.button} ${styles.isShadowed} ${styles.isClicked} subheader-calendar-button`}
@@ -144,7 +142,7 @@ export const ProjectSubHeader = () => {
 					</button>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 
