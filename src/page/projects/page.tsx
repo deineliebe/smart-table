@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Pagination } from '@/widgets/pagination';
 import { useDispatch, useSelector } from '@/shared/lib/store/store';
 import {
@@ -19,19 +19,24 @@ const Projects: FC = () => {
 	}, []);
 	const areProjectsLoading: boolean = useSelector(getLoadingStatus);
 	const projects: TProject[] = useSelector(getProjectData);
+	const [visibleProjects, setVisibleProjects] = useState(projects);
+	useEffect(() => {
+		setVisibleProjects(projects);
+	}, [areProjectsLoading]);
 	return (
 		<>
 			<Header projects={projects} />
-			<ProjectSubHeader projects={projects} />
+			<ProjectSubHeader
+				projects={projects}
+				setVisibleProjects={setVisibleProjects}
+			/>
 			<ProjectsListNav />
-			{areProjectsLoading ? (
-				<Pagination projects={projects} />
-			) : (
+			{!areProjectsLoading && (
 				<>
-					<ProjectsList projects={projects} />
-					<Pagination projects={projects} />
+					<ProjectsList projects={visibleProjects} />
 				</>
 			)}
+			<Pagination projects={visibleProjects} />
 		</>
 	);
 };

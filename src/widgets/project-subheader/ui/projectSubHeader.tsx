@@ -2,17 +2,32 @@ import './projectSubHeader.css';
 import styles from '../../../shared/ui/styles.module.css';
 import buttonStyles from '../../../shared/ui/button.module.css';
 import inputStyles from '../../../shared/ui/input.module.css';
-import { ListProjectProps } from '@/shared/model/types';
+import { ListProjectWithChangeProps } from '@/shared/model/types';
 import { FC } from 'react';
 
-const ProjectSubHeader: FC<ListProjectProps> = ({ projects }) => {
+const ProjectSubHeader: FC<ListProjectWithChangeProps> = ({
+	projects,
+	setVisibleProjects
+}) => {
 	const onTabClick = (evt: React.MouseEvent) => {
 		document.body
 			.querySelector('.subheader-pagination-element-active')
 			?.classList.remove('subheader-pagination-element-active');
-		(evt?.target as HTMLElement)
-			?.closest('button')
-			?.classList?.add('subheader-pagination-element-active');
+		const closestButton = (evt?.target as HTMLElement)?.closest('button');
+		closestButton?.classList?.add('subheader-pagination-element-active');
+		const requiredStatus = closestButton?.querySelector(
+			'span:not([class="subheader-pagination-number"])'
+		);
+		const status = requiredStatus?.innerHTML;
+		if (requiredStatus && requiredStatus.innerHTML) {
+			if (requiredStatus.innerHTML === 'All') {
+				setVisibleProjects(projects);
+			} else {
+				setVisibleProjects(
+					projects?.filter((project) => project.status === status)
+				);
+			}
+		}
 	};
 	return (
 		<section className='subheader'>
@@ -83,7 +98,7 @@ const ProjectSubHeader: FC<ListProjectProps> = ({ projects }) => {
 						className={`subheader-pagination-element ${styles.isClicked}`}
 						onClick={onTabClick}
 					>
-						<span>Risk</span>
+						<span>At risk</span>
 						<span className='subheader-pagination-number'>
 							{
 								projects?.filter((project) => project.status === 'At risk')
