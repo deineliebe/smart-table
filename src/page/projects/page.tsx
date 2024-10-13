@@ -36,7 +36,11 @@ const Projects: FC = () => {
 					<ProjectsList projects={visibleProjects} />
 				</>
 			)}
-			<Pagination projects={visibleProjects} />
+			<Pagination
+				projects={projects}
+				visibleProjects={visibleProjects}
+				setVisibleProjects={setVisibleProjects}
+			/>
 		</>
 	);
 };
