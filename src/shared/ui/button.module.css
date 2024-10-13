@@ -7,6 +7,7 @@
 	box-shadow:
 		0 1px 1px rgb(0 0 0 / 10%),
 		0 0 0 1px rgb(70 79 96 / 16%);
+	cursor: url('../lib/icons/Arrow.svg'), auto;
 }
 
 .button:active {

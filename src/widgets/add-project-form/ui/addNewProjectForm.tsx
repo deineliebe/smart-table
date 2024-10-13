@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styles from '../../../shared/ui/button.module.css';
 
-export const RegisterUI: FC = ({}) => (
+const AddNewFormUI: FC = ({}) => (
 	<main className={styles.container}>
 		<div>
 			<p className='heading'>Add new project</p>
@@ -45,3 +45,5 @@ export const RegisterUI: FC = ({}) => (
 		</div>
 	</main>
 );
+
+export default AddNewFormUI;

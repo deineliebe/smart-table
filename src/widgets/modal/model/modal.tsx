@@ -1,10 +1,6 @@
 import { FC, useEffect } from 'react';
-import ReactDOM from 'react-dom';
-
 import { TModalProps } from './type';
 import { ModalUI } from '../ui';
-
-const modalRoot = document.getElementById('modals');
 
 export const Modal: FC<TModalProps> = ({ title, onClose, children }) => {
 	useEffect(() => {
@@ -20,10 +16,9 @@ export const Modal: FC<TModalProps> = ({ title, onClose, children }) => {
 		};
 	}, [onClose]);
 
-	return ReactDOM.createPortal(
+	return (
 		<ModalUI title={title} onClose={onClose}>
 			{children}
-		</ModalUI>,
-		modalRoot as HTMLDivElement
+		</ModalUI>
 	);
 };

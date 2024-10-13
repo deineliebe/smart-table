@@ -41,14 +41,3 @@ export type TUser = {
 export type ListProjectProps = {
 	projects: TProject[];
 };
-
-export type ListProjectWithChangeProps = ListProjectProps & {
-	projects: TProject[];
-	setVisibleProjects: (projects: TProject[]) => void;
-};
-
-export type ListProjectWithVisibleValuesProps = ListProjectProps & {
-	projects: TProject[];
-	visibleProjects: TProject[];
-	setVisibleProjects: (projects: TProject[]) => void;
-};

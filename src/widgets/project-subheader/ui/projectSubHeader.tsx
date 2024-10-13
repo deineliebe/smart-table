@@ -2,12 +2,19 @@ import './projectSubHeader.css';
 import styles from '../../../shared/ui/styles.module.css';
 import buttonStyles from '../../../shared/ui/button.module.css';
 import inputStyles from '../../../shared/ui/input.module.css';
-import { ListProjectWithChangeProps } from '@/shared/model/types';
 import { FC } from 'react';
+import { TProject } from '@/shared/model/types';
 
-const ProjectSubHeader: FC<ListProjectWithChangeProps> = ({
+export type ProjectSubHeaderProps = {
+	projects: TProject[];
+	setFilteredProjects: (projects: TProject[]) => void;
+	setShowModal: (showModal: boolean) => void;
+};
+
+const ProjectSubHeader: FC<ProjectSubHeaderProps> = ({
 	projects,
-	setVisibleProjects
+	setFilteredProjects,
+	setShowModal
 }) => {
 	const onTabClick = (evt: React.MouseEvent) => {
 		document.body
@@ -21,9 +28,9 @@ const ProjectSubHeader: FC<ListProjectWithChangeProps> = ({
 		const status = requiredStatus?.innerHTML;
 		if (requiredStatus && requiredStatus.innerHTML) {
 			if (requiredStatus.innerHTML === 'All') {
-				setVisibleProjects(projects);
+				setFilteredProjects(projects);
 			} else {
-				setVisibleProjects(
+				setFilteredProjects(
 					projects?.filter((project) => project.status === status)
 				);
 			}
@@ -79,6 +86,7 @@ const ProjectSubHeader: FC<ListProjectWithChangeProps> = ({
 				</div>
 				<button
 					className={`${buttonStyles.button} ${styles.blue} ${styles.isShadowed} ${buttonStyles['button-large-plus']} ${styles.isClicked}`}
+					onClick={() => setShowModal(false)}
 				>
 					<span>New project</span>
 				</button>
