@@ -20,6 +20,10 @@
 	padding: 2px 4px;
 }
 
+.button-medium {
+	padding: 2px 8px;
+}
+
 .button-large {
 	padding: 6px 12px;
 }

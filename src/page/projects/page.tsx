@@ -25,7 +25,7 @@ const Projects: FC = () => {
 	const [visibleProjects, setVisibleProjects] = useState(projects);
 	const [projectsOnPage, setProjectsOnPage] = useState(5);
 	const [page, setPage] = useState(1);
-	const [showModal, setShowModal] = useState(false);
+	const [showModal, setShowModal] = useState(true);
 	useEffect(() => {
 		setFilteredProjects(projects);
 	}, [areProjectsLoading]);
@@ -62,7 +62,7 @@ const Projects: FC = () => {
 				setPage={setPage}
 			/>
 			{showModal && (
-				<Modal title={''} onClose={() => setShowModal(false)}>
+				<Modal title={'Add new project'} onClose={() => setShowModal(false)}>
 					<AddNewForm />
 				</Modal>
 			)}

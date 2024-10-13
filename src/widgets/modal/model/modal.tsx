@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 import { TModalProps } from './type';
 import { ModalUI } from '../ui';
 
-export const Modal: FC<TModalProps> = ({ title, onClose, children }) => {
+export const Modal: FC<TModalProps> = ({ onClose, children }) => {
 	useEffect(() => {
 		const handleEsc = (e: KeyboardEvent) => {
 			if (e.key === 'Escape') {
@@ -16,9 +16,5 @@ export const Modal: FC<TModalProps> = ({ title, onClose, children }) => {
 		};
 	}, [onClose]);
 
-	return (
-		<ModalUI title={title} onClose={onClose}>
-			{children}
-		</ModalUI>
-	);
+	return <ModalUI onClose={onClose}>{children}</ModalUI>;
 };

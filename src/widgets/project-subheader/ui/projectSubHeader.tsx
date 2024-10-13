@@ -86,7 +86,7 @@ const ProjectSubHeader: FC<ProjectSubHeaderProps> = ({
 				</div>
 				<button
 					className={`${buttonStyles.button} ${styles.blue} ${styles.isShadowed} ${buttonStyles['button-large-plus']} ${styles.isClicked}`}
-					onClick={() => setShowModal(false)}
+					onClick={() => setShowModal(true)}
 				>
 					<span>New project</span>
 				</button>
