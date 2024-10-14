@@ -5,9 +5,13 @@ import inputStyles from '../../../shared/ui/input.module.css';
 import styles from '../../../shared/ui/styles.module.css';
 import { useDispatch } from '@/shared/lib/store/store';
 import { addProject } from '@/shared/lib/store/slices/projects';
-import { TProject } from '@/shared/model/types';
+import { TProject, TResource } from '@/shared/model/types';
 
-const AddNewFormUI: FC = ({}) => {
+type AddNewFormProps = {
+	projects: TProject[];
+};
+
+const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 	const dispatch = useDispatch();
 	const onPMClick = (evt: React.MouseEvent) => {
 		document.body
@@ -22,24 +26,52 @@ const AddNewFormUI: FC = ({}) => {
 			'form-add-project-buttons-resource-active'
 		);
 	};
+	const date = new Date();
 	const handleSubmit = (e: SyntheticEvent) => {
+		const formData = document.getElementById('add-project') as HTMLFormElement;
 		e.preventDefault();
+		const resourcesList: TResource[] = [];
+		const resources = formData.querySelectorAll(
+			'.form-add-project-buttons-resource-active'
+		);
+		resources.forEach((resource) => {
+			resourcesList.push(
+				(resource as HTMLButtonElement)?.innerText as TResource
+			);
+		});
 		const newProject: TProject = {
-			id: 0,
-			name: '',
-			PM: '',
+			id: projects.length + 1,
+			name: (document.getElementById('project_name') as HTMLInputElement)
+				?.value,
+			PM: (
+				formData.querySelector(
+					'.form-add-project-pm-option'
+				) as HTMLButtonElement
+			)?.innerText,
 			status: 'On track',
-			last_update: '',
-			resources: [],
-			start: '',
-			end: '',
-			estimation: ''
+			last_update: date.toLocaleString(),
+			resources: resourcesList,
+			start: (document.getElementById('start_date') as HTMLInputElement)?.value,
+			end: (document.getElementById('end_date') as HTMLInputElement)?.value,
+			estimation: (document.getElementById('estimation') as HTMLInputElement)
+				?.value
 		};
-		dispatch(addProject(newProject));
+		console.log(formData.querySelector('.form-add-project-pm-option'));
+		const newProjects: TProject[] = [];
+		projects.forEach((project) => {
+			newProjects.push(project);
+		});
+		newProjects.push(newProject);
+		dispatch(addProject(newProjects));
 	};
 	return (
 		<>
-			<form className='form-add-project' onSubmit={handleSubmit}>
+			<form
+				id='add-project'
+				name='add-project'
+				className='form-add-project'
+				onSubmit={handleSubmit}
+			>
 				<p className='modal-add-project-heading'>Add new project</p>
 				<section className='modal-add-project-section'>
 					<fieldset className='modal-add-project-field'>
@@ -54,6 +86,7 @@ const AddNewFormUI: FC = ({}) => {
 							id='project_name'
 							name='project_name'
 							className={`${inputStyles.input} form-add-project-input`}
+							required
 						/>
 					</fieldset>
 					<fieldset className='modal-add-project-field'>
@@ -88,7 +121,7 @@ const AddNewFormUI: FC = ({}) => {
 						<label className='form-add-project-label' htmlFor='resources'>
 							Resources
 						</label>
-						<div id='resources' className='form-add-project-buttons-resource'>
+						<div id='resources' className='form-add-project-buttons-resources'>
 							<button
 								type='button'
 								className={`${buttonStyles.button} ${buttonStyles['button-medium']} ${styles.white} ${styles.isShadowed} ${styles.isClicked}`}

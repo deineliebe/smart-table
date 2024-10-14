@@ -14,14 +14,15 @@ export const getProjectsApi = () =>
 			return Promise.reject(data);
 		});
 
-export const addProjectsApi = (data: TProject) =>
+export const addProjectsApi = (data: TProject[]) =>
 	fetch(`${URL}/projects`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json;charset=utf-8'
 		} as HeadersInit,
 		body: JSON.stringify({
-			project: data
+			data: data,
+			success: true
 		})
 	})
 		.then((res) => checkResponse<TProjectsResponse>(res))

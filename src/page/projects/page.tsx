@@ -63,7 +63,7 @@ const Projects: FC = () => {
 			/>
 			{showModal && (
 				<Modal title={'Add new project'} onClose={() => setShowModal(false)}>
-					<AddNewForm />
+					<AddNewForm projects={projects} />
 				</Modal>
 			)}
 		</>
