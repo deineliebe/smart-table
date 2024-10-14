@@ -1,10 +1,14 @@
-import { FC } from 'react';
+import { FC, SyntheticEvent } from 'react';
 import './addNewProjectForm.css';
 import buttonStyles from '../../../shared/ui/button.module.css';
 import inputStyles from '../../../shared/ui/input.module.css';
 import styles from '../../../shared/ui/styles.module.css';
+import { useDispatch } from '@/shared/lib/store/store';
+import { addProject } from '@/shared/lib/store/slices/projects';
+import { TProject } from '@/shared/model/types';
 
 const AddNewFormUI: FC = ({}) => {
+	const dispatch = useDispatch();
 	const onPMClick = (evt: React.MouseEvent) => {
 		document.body
 			.querySelector('.form-add-project-pm-option-active')
@@ -18,9 +22,24 @@ const AddNewFormUI: FC = ({}) => {
 			'form-add-project-buttons-resource-active'
 		);
 	};
+	const handleSubmit = (e: SyntheticEvent) => {
+		e.preventDefault();
+		const newProject: TProject = {
+			id: 0,
+			name: '',
+			PM: '',
+			status: 'On track',
+			last_update: '',
+			resources: [],
+			start: '',
+			end: '',
+			estimation: ''
+		};
+		dispatch(addProject(newProject));
+	};
 	return (
 		<>
-			<form className='form-add-project'>
+			<form className='form-add-project' onSubmit={handleSubmit}>
 				<p className='modal-add-project-heading'>Add new project</p>
 				<section className='modal-add-project-section'>
 					<fieldset className='modal-add-project-field'>

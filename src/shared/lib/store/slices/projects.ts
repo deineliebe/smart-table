@@ -1,4 +1,4 @@
-import { getProjectsApi } from '@/shared/api/api';
+import { addProjectsApi, getProjectsApi } from '@/shared/api/api';
 import { TProject } from '@/shared/model/types';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 //import { v4 as uuidv4 } from 'uuid';
@@ -16,6 +16,8 @@ export const initialProjectState: TProjectState = {
 	projects: [],
 	error: null
 };
+
+export const addProject = createAsyncThunk('/projects/add', addProjectsApi);
 
 export const projectSlice = createSlice({
 	name: 'projects',
@@ -36,6 +38,19 @@ export const projectSlice = createSlice({
 				state.error = action.error.message;
 			})
 			.addCase(getProjects.fulfilled, (state, action) => {
+				state.isLoading = false;
+				state.projects = action.payload.data;
+				state.error = null;
+			})
+			.addCase(addProject.pending, (state) => {
+				state.isLoading = true;
+				state.error = null;
+			})
+			.addCase(addProject.rejected, (state, action) => {
+				state.isLoading = false;
+				state.error = action.error.message;
+			})
+			.addCase(addProject.fulfilled, (state, action) => {
 				state.isLoading = false;
 				state.projects = action.payload.data;
 				state.error = null;
