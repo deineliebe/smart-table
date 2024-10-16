@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import { Footer } from '@/widgets/footer';
 import styles from '../src/shared/ui/styles.module.css';
 import { Sidebar } from '@/widgets/sidebar';
+import './layout.css';
 
 const inter = Inter({ weight: ['400', '500', '700'], subsets: ['latin'] });
 

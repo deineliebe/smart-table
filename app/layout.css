@@ -15,15 +15,7 @@ body {
 	font-weight: 500;
 	font-size: 14px;
 	font-family: 'Inter', sans-serif;
-	line-height: 150;
-	letter-spacing: 0.02em;
 	background: var(--background);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
 }
