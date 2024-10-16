@@ -36,6 +36,13 @@
 	padding-right: 22px;
 }
 
+.subheader-selected-button {
+	align-content: center;
+	padding: 0;
+	background-color: transparent;
+	border: none;
+}
+
 .subheader-calendar-button {
 	grid-area: 'calendar';
 	padding: 8px 12px;
