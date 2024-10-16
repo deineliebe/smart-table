@@ -19,7 +19,21 @@
 }
 
 .subheader-selected {
+	display: flex;
 	grid-area: 'selected';
+	flex-direction: row;
+	gap: 10px;
+}
+
+.subheader-selected-text {
+	align-items: center;
+	color: #687182;
+	font-weight: 400;
+	white-space: nowrap;
+}
+
+.subheader-selected-select {
+	padding-right: 22px;
 }
 
 .subheader-calendar-button {
