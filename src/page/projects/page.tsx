@@ -41,6 +41,17 @@ const Projects: FC = () => {
 			filteredProjects.slice(projectsOnPage * (page - 1), projectsOnPage * page)
 		);
 	}, [page]);
+	const [selectedProjects, setSelectedProjects] = useState<TProject[]>([]);
+	const checkProject = (evt: React.MouseEvent) => {
+		//const closestProject = (evt?.target as HTMLElement)?.closest('.project');
+		console.log(evt);
+		const newSelectedProjects: TProject[] = [];
+		selectedProjects.forEach((project) => {
+			newSelectedProjects.push(project);
+		});
+		//newSelectedProjects.push(closestProject);
+		setSelectedProjects(newSelectedProjects);
+	};
 	return (
 		<>
 			<Header projects={projects} />
@@ -48,11 +59,15 @@ const Projects: FC = () => {
 				projects={projects}
 				setFilteredProjects={setFilteredProjects}
 				setShowModal={setShowAddProjectModalShowModal}
+				selectedProjects={selectedProjects}
 			/>
-			<ProjectsListNav />
+			<ProjectsListNav selectedProjects={selectedProjects} />
 			{!areProjectsLoading && (
 				<>
-					<ProjectsList projects={visibleProjects} />
+					<ProjectsList
+						projects={visibleProjects}
+						checkProject={checkProject}
+					/>
 				</>
 			)}
 			<Pagination

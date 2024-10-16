@@ -6,7 +6,10 @@ import { ProjectCardUIProps } from './type';
 import Link from 'next/link';
 import { Tag } from '@/widgets/tag/model';
 
-export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
+export const ProjectCardUI: FC<ProjectCardUIProps> = ({
+	projectInfo,
+	checkProject
+}) => {
 	return (
 		<div className='project'>
 			<label className={`${styles.isClicked}`}>
@@ -15,6 +18,7 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({ projectInfo }) => {
 					className={`${styles['visually-hidden']}`}
 					name='project'
 					value='choose-project'
+					onClick={checkProject}
 				></input>
 				<span></span>
 				<span className={`${styles['visually-hidden']}`}>а</span>

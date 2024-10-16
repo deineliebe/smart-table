@@ -37,7 +37,3 @@ export type TProject = {
 export type TUser = {
 	name: string;
 };
-
-export type ListProjectProps = {
-	projects: TProject[];
-};

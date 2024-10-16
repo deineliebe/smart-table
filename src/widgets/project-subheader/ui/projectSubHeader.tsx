@@ -9,12 +9,14 @@ export type ProjectSubHeaderProps = {
 	projects: TProject[];
 	setFilteredProjects: (projects: TProject[]) => void;
 	setShowModal: (showModal: boolean) => void;
+	selectedProjects: TProject[];
 };
 
 const ProjectSubHeader: FC<ProjectSubHeaderProps> = ({
 	projects,
 	setFilteredProjects,
-	setShowModal
+	setShowModal,
+	selectedProjects
 }) => {
 	const onTabClick = (evt: React.MouseEvent) => {
 		document.body
@@ -38,7 +40,14 @@ const ProjectSubHeader: FC<ProjectSubHeaderProps> = ({
 	};
 	return (
 		<section className='subheader'>
-			<div className='subheader-upper-part'>
+			<div
+				className={`subheader-upper-part ${selectedProjects.length > 0 && 'subheader-upper-part-with-select'}`}
+			>
+				{selectedProjects.length > 0 && (
+					<div className='subheader-selected'>
+						<span>{selectedProjects.length} selected</span>
+					</div>
+				)}
 				<button
 					className={`${buttonStyles.button} ${styles.isShadowed} ${styles.isClicked} subheader-calendar-button`}
 				>

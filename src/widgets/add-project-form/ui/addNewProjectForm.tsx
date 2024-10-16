@@ -56,7 +56,6 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 			estimation: (document.getElementById('estimation') as HTMLInputElement)
 				?.value
 		};
-		console.log(formData.querySelector('.form-add-project-pm-option'));
 		const newProjects: TProject[] = [];
 		projects.forEach((project) => {
 			newProjects.push(project);

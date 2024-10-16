@@ -4,7 +4,7 @@
 	--gray-alpha-100: rgba(var(--gray-rgb), 0.05);
 	--button-primary-hover: #383838;
 	--button-secondary-hover: #f2f2f2;
-	margin: var(--header-width, 57px) 0 0 var(--sidebar-width, 64px);
+	margin: var(--header-width, 56px) 0 0 var(--sidebar-width, 72px);
 	cursor: url('../lib/icons/Arrow.svg'), auto;
 }
 

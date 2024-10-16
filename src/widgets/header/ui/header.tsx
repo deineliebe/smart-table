@@ -3,10 +3,15 @@ import headingStyles from '../../../shared/ui/heading.module.css';
 import styles from '../../../shared/ui/styles.module.css';
 import Image from 'next/image';
 import avatar from '../../../shared/lib/images/Rectangle 1650.jpg';
-import { ListProjectProps } from '@/shared/model/types';
-import { FC } from 'react';
 
-const Header: FC<ListProjectProps> = ({ projects }) => (
+import { FC } from 'react';
+import { TProject } from '@/shared/model/types';
+
+export type HeaderProps = {
+	projects: TProject[];
+};
+
+const Header: FC<HeaderProps> = ({ projects }) => (
 	<div className='header'>
 		<div className='header-block'>
 			<p className={headingStyles.mainHeading}>Projects</p>

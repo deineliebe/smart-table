@@ -8,9 +8,18 @@
 .subheader-upper-part {
 	display: grid;
 	grid-template-columns: min-content min-content auto;
-	grid-template-areas: 'subheader search add-project';
+	grid-template-areas: 'calendar search add-project';
 	place-items: center end;
 	gap: 20px;
+}
+
+.subheader-upper-part-with-select {
+	grid-template-columns: min-content min-content min-content auto;
+	grid-template-areas: 'selected calendar search add-project';
+}
+
+.subheader-selected {
+	grid-area: 'selected';
 }
 
 .subheader-calendar-button {

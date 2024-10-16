@@ -1,7 +1,6 @@
 import { addProjectsApi, getProjectsApi } from '@/shared/api/api';
 import { TProject } from '@/shared/model/types';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-//import { v4 as uuidv4 } from 'uuid';
 
 export const getProjects = createAsyncThunk('/projects', getProjectsApi);
 
