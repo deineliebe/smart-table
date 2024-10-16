@@ -1,32 +1,23 @@
 import './project-list-nav.css';
 
 import styles from '../../../shared/ui/styles.module.css';
-import { TProject } from '@/shared/model/types';
 import { FC } from 'react';
 
 export type ProjectsListProps = {
-	selectedProjects: TProject[];
+	selectedProjects: number[];
 };
 
 const ProjectsListNav: FC<ProjectsListProps> = ({ selectedProjects }) => (
 	<div className='project-list-nav'>
 		<label className={`${styles.isClicked}`}>
-			{selectedProjects ? (
-				<input
-					type='checkbox'
-					className={`${styles['visually-hidden']}`}
-					name='project'
-					value='choose-project'
-				></input>
-			) : (
-				<input
-					type='checkbox'
-					className={`${styles['visually-hidden']}`}
-					name='project'
-					value='choose-project'
-					checked
-				></input>
-			)}
+			<input
+				type='checkbox'
+				className={`${styles['visually-hidden']}`}
+				name='project-main-id-checkbox'
+				id='project-main-id-checkbox'
+				value='choose-project'
+				checked={selectedProjects.length > 0}
+			></input>
 			<span></span>
 			<span className={`${styles['visually-hidden']}`}>а</span>
 		</label>

@@ -9,7 +9,7 @@ export type ProjectSubHeaderProps = {
 	projects: TProject[];
 	setFilteredProjects: (projects: TProject[]) => void;
 	setShowModal: (showModal: boolean) => void;
-	selectedProjects: TProject[];
+	selectedProjects: number[];
 };
 
 const ProjectSubHeader: FC<ProjectSubHeaderProps> = ({

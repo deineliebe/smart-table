@@ -8,7 +8,8 @@ import { Tag } from '@/widgets/tag/model';
 
 export const ProjectCardUI: FC<ProjectCardUIProps> = ({
 	projectInfo,
-	checkProject
+	checkProject,
+	isChecked
 }) => {
 	return (
 		<div className='project'>
@@ -18,7 +19,11 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({
 					className={`${styles['visually-hidden']}`}
 					name='project'
 					value='choose-project'
+					onChange={(evt) => {
+						evt.target.removeAttribute('checked');
+					}}
 					onClick={checkProject}
+					defaultChecked={isChecked}
 				></input>
 				<span></span>
 				<span className={`${styles['visually-hidden']}`}>а</span>
@@ -42,7 +47,7 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({
 					fill='#868FA0'
 				/>
 			</svg>
-			<p>{projectInfo.id}</p>
+			<p className='project-id'>{projectInfo.id}</p>
 			<Link
 				className={`project-name ${styles.isClicked}`}
 				href={`/project:${projectInfo.id}`}

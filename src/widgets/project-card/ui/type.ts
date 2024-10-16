@@ -3,6 +3,7 @@ import { TResource, TTagLocal } from '@/shared/model/types';
 export type ProjectCardUIProps = {
 	projectInfo: TProjectInfo;
 	checkProject: (evt: React.MouseEvent) => void;
+	isChecked: boolean;
 };
 
 type TProjectInfo = {

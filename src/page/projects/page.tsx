@@ -41,15 +41,24 @@ const Projects: FC = () => {
 			filteredProjects.slice(projectsOnPage * (page - 1), projectsOnPage * page)
 		);
 	}, [page]);
-	const [selectedProjects, setSelectedProjects] = useState<TProject[]>([]);
+	const [selectedProjects, setSelectedProjects] = useState<number[]>([]);
 	const checkProject = (evt: React.MouseEvent) => {
-		//const closestProject = (evt?.target as HTMLElement)?.closest('.project');
-		console.log(evt);
-		const newSelectedProjects: TProject[] = [];
-		selectedProjects.forEach((project) => {
-			newSelectedProjects.push(project);
-		});
-		//newSelectedProjects.push(closestProject);
+		const closestProject = (evt?.target as HTMLElement)?.closest('.project');
+		const closestProjectId = Number(
+			closestProject?.querySelector('p[class="project-id"]')?.innerHTML
+		);
+		const newSelectedProjects: number[] = [];
+		console.log(document.getElementById('project-main-id-checkbox'));
+		if (selectedProjects.includes(closestProjectId)) {
+			selectedProjects.forEach((project) => {
+				if (project != closestProjectId) newSelectedProjects.push(project);
+			});
+		} else {
+			selectedProjects.forEach((project) => {
+				newSelectedProjects.push(project);
+			});
+			newSelectedProjects.push(closestProjectId);
+		}
 		setSelectedProjects(newSelectedProjects);
 	};
 	return (
@@ -67,6 +76,7 @@ const Projects: FC = () => {
 					<ProjectsList
 						projects={visibleProjects}
 						checkProject={checkProject}
+						selectedProjects={selectedProjects}
 					/>
 				</>
 			)}

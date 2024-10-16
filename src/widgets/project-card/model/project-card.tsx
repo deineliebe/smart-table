@@ -4,7 +4,14 @@ import { ProjectCardProps } from './type';
 
 export const ProjectCard: FC<ProjectCardProps> = ({
 	project,
-	checkProject
+	checkProject,
+	isChecked
 }) => {
-	return <ProjectCardUI projectInfo={project} checkProject={checkProject} />;
+	return (
+		<ProjectCardUI
+			projectInfo={project}
+			checkProject={checkProject}
+			isChecked={isChecked}
+		/>
+	);
 };
