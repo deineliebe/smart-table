@@ -5,9 +5,13 @@ import { FC } from 'react';
 
 export type ProjectsListProps = {
 	selectedProjects: number[];
+	onMainCheckboxClick: () => void;
 };
 
-const ProjectsListNav: FC<ProjectsListProps> = ({ selectedProjects }) => (
+const ProjectsListNav: FC<ProjectsListProps> = ({
+	selectedProjects,
+	onMainCheckboxClick
+}) => (
 	<div className='project-list-nav'>
 		<label className={`${styles.isClicked}`}>
 			<input
@@ -16,9 +20,10 @@ const ProjectsListNav: FC<ProjectsListProps> = ({ selectedProjects }) => (
 				name='project-main-id-checkbox'
 				id='project-main-id-checkbox'
 				value='choose-project'
+				onChange={onMainCheckboxClick}
 				checked={selectedProjects.length > 0}
 			></input>
-			<span></span>
+			<span className='project-list-nav-checkbox'></span>
 			<span className={`${styles['visually-hidden']}`}>а</span>
 		</label>
 		<div>

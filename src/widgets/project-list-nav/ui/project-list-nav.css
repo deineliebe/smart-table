@@ -17,3 +17,7 @@
 	align-items: center;
 	gap: 6px;
 }
+
+input[type='checkbox']:checked + span[class='project-list-nav-checkbox'] {
+	background-image: url('./../../../shared/lib/icons/Checkbox.svg');
+}

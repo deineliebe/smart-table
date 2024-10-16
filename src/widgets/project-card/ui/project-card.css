@@ -32,13 +32,16 @@ input[type='checkbox'] + span {
 
 input[type='checkbox']:checked + span {
 	background-color: #5e5adb;
-	background-image: url('../../../shared/lib/icons/Vector\ 26.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
 	box-shadow:
 		0 1px 1px rgb(0 0 0 / 10%),
 		0 0 0 1px #5e5adb;
+}
+
+input[type='checkbox']:checked + span[class='project-checkbox'] {
+	background-image: url('../../../shared/lib/icons/Checkbox\ \(1\).svg');
 }
 
 .project-name {

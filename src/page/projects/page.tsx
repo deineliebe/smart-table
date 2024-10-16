@@ -27,6 +27,7 @@ const Projects: FC = () => {
 	const [page, setPage] = useState(1);
 	const [showAddProjectModal, setShowAddProjectModalShowModal] =
 		useState(false);
+	const [selectedProjects, setSelectedProjects] = useState<number[]>([]);
 	useEffect(() => {
 		setFilteredProjects(projects);
 	}, [areProjectsLoading]);
@@ -41,7 +42,7 @@ const Projects: FC = () => {
 			filteredProjects.slice(projectsOnPage * (page - 1), projectsOnPage * page)
 		);
 	}, [page]);
-	const [selectedProjects, setSelectedProjects] = useState<number[]>([]);
+
 	const checkProject = (evt: React.MouseEvent) => {
 		const closestProject = (evt?.target as HTMLElement)?.closest('.project');
 		const closestProjectId = Number(
@@ -61,6 +62,19 @@ const Projects: FC = () => {
 		}
 		setSelectedProjects(newSelectedProjects);
 	};
+
+	const onMainCheckboxClick = () => {
+		if (selectedProjects.length) {
+			setSelectedProjects([]);
+		} else {
+			const newIds: number[] = [];
+			filteredProjects.forEach((project) => {
+				newIds.push(project.id);
+			});
+			setSelectedProjects(newIds);
+		}
+	};
+
 	return (
 		<>
 			<Header projects={projects} />
@@ -70,7 +84,10 @@ const Projects: FC = () => {
 				setShowModal={setShowAddProjectModalShowModal}
 				selectedProjects={selectedProjects}
 			/>
-			<ProjectsListNav selectedProjects={selectedProjects} />
+			<ProjectsListNav
+				selectedProjects={selectedProjects}
+				onMainCheckboxClick={onMainCheckboxClick}
+			/>
 			{!areProjectsLoading && (
 				<>
 					<ProjectsList

@@ -19,13 +19,10 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({
 					className={`${styles['visually-hidden']}`}
 					name='project'
 					value='choose-project'
-					onChange={(evt) => {
-						evt.target.removeAttribute('checked');
-					}}
 					onClick={checkProject}
-					defaultChecked={isChecked}
+					checked={isChecked}
 				></input>
-				<span></span>
+				<span className='project-checkbox'></span>
 				<span className={`${styles['visually-hidden']}`}>а</span>
 			</label>
 			<svg
