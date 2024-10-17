@@ -25,8 +25,7 @@ const Projects: FC = () => {
 	const [visibleProjects, setVisibleProjects] = useState(projects);
 	const [projectsOnPage, setProjectsOnPage] = useState(5);
 	const [page, setPage] = useState(1);
-	const [showAddProjectModal, setShowAddProjectModalShowModal] =
-		useState(false);
+	const [showAddProjectModal, setShowAddProjectModal] = useState(false);
 	const [selectedProjects, setSelectedProjects] = useState<number[]>([]);
 	useEffect(() => {
 		setFilteredProjects(projects);
@@ -81,7 +80,7 @@ const Projects: FC = () => {
 			<ProjectSubHeader
 				projects={projects}
 				setFilteredProjects={setFilteredProjects}
-				setShowModal={setShowAddProjectModalShowModal}
+				setShowModal={setShowAddProjectModal}
 				selectedProjects={selectedProjects}
 			/>
 			<ProjectsListNav
@@ -107,7 +106,7 @@ const Projects: FC = () => {
 			{showAddProjectModal && (
 				<Modal
 					title={'Add new project'}
-					onClose={() => setShowAddProjectModalShowModal(false)}
+					onClose={() => setShowAddProjectModal(false)}
 				>
 					<AddNewForm projects={projects} />
 				</Modal>

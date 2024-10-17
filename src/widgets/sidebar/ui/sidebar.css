@@ -17,9 +17,14 @@
 }
 
 .sidebar-element {
+	display: flex;
+	inline-size: 40px;
+	block-size: 40px;
 	padding: 8px;
+	background: transparent;
 	border: 1.5px solid transparent;
 	border-radius: 6px;
+	place-items: center;
 }
 
 .sidebar-element:not(.active):hover {
