@@ -1,0 +1,31 @@
+.pagination {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 20px 13px;
+	color: #687182;
+	font-size: 12px;
+	letter-spacing: 0.03em;
+}
+
+.pagination-block {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.pagination-block button {
+	display: flex;
+	gap: 8px;
+	border-radius: 6px;
+}
+
+.pagination-block p {
+	display: block;
+}
+
+.pagination-select {
+	padding-right: 14px;
+}
