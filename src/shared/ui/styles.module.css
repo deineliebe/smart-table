@@ -92,3 +92,10 @@
 .upperCase {
 	text-transform: uppercase;
 }
+
+.modal-footer {
+	display: flex;
+	justify-content: end;
+	gap: 20px;
+	padding: 16px 20px;
+}

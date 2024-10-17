@@ -21,7 +21,7 @@ body:not(:-moz-handler-blocked) .fieldset {
 	display: table-cell;
 }
 
-.form-add-project {
+.form-settings {
 	display: flex;
 	flex-direction: column;
 	inline-size: 400px;
@@ -33,9 +33,8 @@ body:not(:-moz-handler-blocked) .fieldset {
 }
 
 .modal-add-project-heading {
-	inline-size: 100%;
-	padding: 0 20px;
-	font-weight: 500;
+	color: #171c26;
+	font-weight: 700;
 	font-size: 18px;
 }
 
@@ -57,19 +56,9 @@ body:not(:-moz-handler-blocked) .fieldset {
 }
 
 .form-add-project-label {
+	color: #464f60;
 	font-weight: 500;
 	font-size: 14px;
-}
-
-.form-add-project-label-required {
-	position: relative;
-}
-
-.form-add-project-label-required::after {
-	position: absolute;
-	content: '*';
-	padding-left: 5px;
-	color: #5e5adb;
 }
 
 .form-add-project-button-pm {
@@ -180,11 +169,4 @@ body:not(:-moz-handler-blocked) .fieldset {
 		0 1px 1px rgb(0 0 0 / 10%),
 		0 0 0 1px rgb(70 79 96 / 16%);
 	appearance: none;
-}
-
-.modal-add-project-footer {
-	display: flex;
-	justify-content: end;
-	gap: 20px;
-	padding: 16px 20px;
 }

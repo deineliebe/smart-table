@@ -233,7 +233,7 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 						/>
 					</fieldset>
 				</section>
-				<div className='modal-add-project-footer'>
+				<div className={`${styles['modal-footer']}`}>
 					<button
 						type='reset'
 						className={`${buttonStyles.button} ${buttonStyles['button-large']} ${styles.white}`}
