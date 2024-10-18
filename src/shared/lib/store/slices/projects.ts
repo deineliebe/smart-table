@@ -1,4 +1,5 @@
 import { addProjectsApi, getProjectsApi } from '@/shared/api/api';
+import { constantsMap } from '@/shared/model/constants';
 import { TProject } from '@/shared/model/types';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
@@ -19,7 +20,7 @@ export const initialProjectState: TProjectState = {
 export const addProject = createAsyncThunk('/projects/add', addProjectsApi);
 
 export const projectSlice = createSlice({
-	name: 'projects',
+	name: constantsMap.slices.projects,
 	initialState: initialProjectState,
 	reducers: {},
 	selectors: {
@@ -61,3 +62,4 @@ export const {} = projectSlice.actions;
 
 export const { getProjectData, getLoadingStatus } = projectSlice.selectors;
 export const projectReducer = projectSlice.reducer;
+export const projectName = projectSlice.name;

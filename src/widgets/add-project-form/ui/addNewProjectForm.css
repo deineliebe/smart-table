@@ -50,12 +50,6 @@ body:not(:-moz-handler-blocked) .fieldset {
 	background: #f7f8fa;
 }
 
-.modal-add-project-field {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-}
-
 .form-add-project-label {
 	font-weight: 500;
 	font-size: 14px;

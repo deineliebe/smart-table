@@ -1,5 +1,6 @@
 import { FC, SyntheticEvent } from 'react';
 import './addNewProjectForm.css';
+import modalStyles from '../../../shared/ui/modal.module.css';
 import buttonStyles from '../../../shared/ui/button.module.css';
 import inputStyles from '../../../shared/ui/input.module.css';
 import styles from '../../../shared/ui/styles.module.css';
@@ -73,7 +74,7 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 			>
 				<p className='modal-add-project-heading'>Add new project</p>
 				<section className='modal-add-project-section'>
-					<fieldset className='modal-add-project-field'>
+					<fieldset className={`${modalStyles['modal-field']}`}>
 						<label
 							className='form-add-project-label form-add-project-label-required'
 							htmlFor='project_name'
@@ -88,7 +89,7 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 							required
 						/>
 					</fieldset>
-					<fieldset className='modal-add-project-field'>
+					<fieldset className={`${modalStyles['modal-field']}`}>
 						<label className='form-add-project-label' htmlFor='pms'>
 							Project manager (PM)
 						</label>
@@ -116,7 +117,7 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 							</button>
 						</div>
 					</fieldset>
-					<fieldset className='modal-add-project-field'>
+					<fieldset className={`${modalStyles['modal-field']}`}>
 						<label className='form-add-project-label' htmlFor='resources'>
 							Resources
 						</label>
@@ -172,7 +173,7 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 							</button>
 						</div>
 					</fieldset>
-					<fieldset className='modal-add-project-field'>
+					<fieldset className={`${modalStyles['modal-field']}`}>
 						<label className='form-add-project-label' htmlFor='timeline'>
 							Project timeline
 						</label>
@@ -220,7 +221,7 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 							</div>
 						</div>
 					</fieldset>
-					<fieldset className='modal-add-project-field'>
+					<fieldset className={`${modalStyles['modal-field']}`}>
 						<label className='form-add-project-label' htmlFor='estimation'>
 							Estimation
 						</label>
@@ -233,7 +234,7 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 						/>
 					</fieldset>
 				</section>
-				<div className={`${styles['modal-footer']}`}>
+				<div className={`${modalStyles['modal-footer']}`}>
 					<button
 						type='reset'
 						className={`${buttonStyles.button} ${buttonStyles['button-large']} ${styles.white}`}

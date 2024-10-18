@@ -27,14 +27,10 @@ const Pagination: FC<PaginationProps> = ({
 	};
 	const pagesCnt = Math.trunc(filteredProjects.length / projectsOnPage) + 1;
 	const onBackButtonClick = () => {
-		if (page !== 1) {
-			setPage(page - 1);
-		}
+		setPage(page - 1);
 	};
 	const onNextButtonClick = () => {
-		if (page !== pagesCnt) {
-			setPage(page + 1);
-		}
+		setPage(page + 1);
 	};
 	return (
 		<div className='pagination'>
@@ -64,7 +60,8 @@ const Pagination: FC<PaginationProps> = ({
 					<option value='50'>50</option>
 				</select>
 				<button
-					className={`${buttonStyles.button} ${buttonStyles['button-small']} ${page !== 1 ? styles.isShadowed + ' ' + styles.isClicked : 'disabled'}`}
+					className={`${buttonStyles.button} ${styles.white} ${buttonStyles['button-small']} ${page !== 1 && styles.isShadowed + ' ' + styles.isClicked}`}
+					disabled={page === 1}
 					onClick={onBackButtonClick}
 				>
 					<svg
@@ -87,7 +84,8 @@ const Pagination: FC<PaginationProps> = ({
 					{page}/{pagesCnt}
 				</p>
 				<button
-					className={`${buttonStyles.button} ${buttonStyles['button-small']} ${page !== pagesCnt && styles.isShadowed + ' ' + styles.isClicked}`}
+					className={`${buttonStyles.button} ${styles.white} ${buttonStyles['button-small']} ${page !== pagesCnt && styles.isShadowed + ' ' + styles.isClicked}`}
+					disabled={page === pagesCnt}
 					onClick={onNextButtonClick}
 				>
 					<svg

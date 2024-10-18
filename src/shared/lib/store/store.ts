@@ -5,10 +5,10 @@ import {
 	useDispatch as dispatchHook,
 	useSelector as selectorHook
 } from 'react-redux';
-import { projectReducer } from './slices/projects';
+import { projectSlice } from './slices/projects';
 
 export const rootReducer = combineReducers({
-	projects: projectReducer
+	projects: projectSlice.reducer
 });
 
 const store = configureStore({

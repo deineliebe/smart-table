@@ -1,1 +1,5 @@
-export const constantsMap = {};
+export const constantsMap = {
+	slices: {
+		projects: 'projects'
+	}
+};
