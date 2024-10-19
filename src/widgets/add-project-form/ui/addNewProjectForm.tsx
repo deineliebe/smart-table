@@ -1,6 +1,6 @@
-import { FC, SyntheticEvent } from 'react';
+import { FC, SyntheticEvent, useRef } from 'react';
 import './addNewProjectForm.css';
-import modalStyles from '../../../shared/ui/modal.module.css';
+import formStyles from '../../../shared/ui/form.module.css';
 import buttonStyles from '../../../shared/ui/button.module.css';
 import inputStyles from '../../../shared/ui/input.module.css';
 import styles from '../../../shared/ui/styles.module.css';
@@ -13,19 +13,19 @@ type AddNewFormProps = {
 };
 
 const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
+	const barRef = useRef(null);
 	const dispatch = useDispatch();
 	const onPMClick = (evt: React.MouseEvent) => {
 		document.body
-			.querySelector('.form-add-project-pm-option-active')
-			?.classList.remove('form-add-project-pm-option-active');
+			.querySelector(`.${formStyles['form-button-in-bar-active']}`)
+			?.classList.remove(`${formStyles['form-button-in-bar-active']}`);
 		(evt?.target as HTMLElement)?.classList?.add(
-			'form-add-project-pm-option-active'
+			`${formStyles['form-button-in-bar-active']}`
 		);
 	};
 	const onResourceClick = (evt: React.MouseEvent) => {
-		(evt?.target as HTMLElement)?.classList?.toggle(
-			'form-add-project-buttons-resource-active'
-		);
+		(evt?.target as HTMLElement)?.classList?.toggle(`${styles.blue}`);
+		(evt?.target as HTMLElement)?.classList?.toggle(`${styles.white}`);
 	};
 	const date = new Date();
 	const handleSubmit = (e: SyntheticEvent) => {
@@ -33,7 +33,7 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 		e.preventDefault();
 		const resourcesList: TResource[] = [];
 		const resources = formData.querySelectorAll(
-			'.form-add-project-buttons-resource-active'
+			'.add-project-buttons-resource-active'
 		);
 		resources.forEach((resource) => {
 			resourcesList.push(
@@ -45,9 +45,7 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 			name: (document.getElementById('project_name') as HTMLInputElement)
 				?.value,
 			PM: (
-				formData.querySelector(
-					'.form-add-project-pm-option'
-				) as HTMLButtonElement
+				formData.querySelector('.add-project-pm-option') as HTMLButtonElement
 			)?.innerText,
 			status: 'On track',
 			last_update: date.toLocaleString(),
@@ -69,14 +67,18 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 			<form
 				id='add-project'
 				name='add-project'
-				className='form-add-project'
+				className='add-project'
 				onSubmit={handleSubmit}
 			>
-				<p className='modal-add-project-heading'>Add new project</p>
-				<section className='modal-add-project-section'>
-					<fieldset className={`${modalStyles['modal-field']}`}>
+				<p className={`${formStyles['form-heading']} add-project-heading`}>
+					Add new project
+				</p>
+				<section
+					className={`${formStyles['form-section']} add-project-section`}
+				>
+					<fieldset className={`${formStyles['form-field']}`}>
 						<label
-							className='form-add-project-label form-add-project-label-required'
+							className={`${formStyles['form-label']} add-project-label-required`}
 							htmlFor='project_name'
 						>
 							Project name{' '}
@@ -85,43 +87,50 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 							type='text'
 							id='project_name'
 							name='project_name'
-							className={`${inputStyles.input} form-add-project-input`}
+							className={`${inputStyles.input} add-project-input`}
 							required
 						/>
 					</fieldset>
-					<fieldset className={`${modalStyles['modal-field']}`}>
-						<label className='form-add-project-label' htmlFor='pms'>
+					<fieldset className={`${formStyles['form-field']}`}>
+						<label className={`${formStyles['form-label']}`} htmlFor='pms'>
 							Project manager (PM)
 						</label>
-						<div id='pms' className='form-add-project-buttons-bar'>
+						<div
+							id='pms'
+							className={`${formStyles['form-buttons-bar']}`}
+							ref={barRef}
+						>
 							<button
 								type='button'
-								className={`form-add-project-pm-option form-add-project-pm-option-active ${styles.isShadowed} ${styles.isClicked}`}
+								className={`${formStyles['form-button-in-bar']} ${formStyles['form-button-in-bar-active']} ${styles.isShadowed} ${styles.isClicked}`}
 								onClick={onPMClick}
 							>
 								Roger Vaccaro
 							</button>
 							<button
 								type='button'
-								className={`form-add-project-pm-option ${styles.isShadowed} ${styles.isClicked}`}
+								className={`${formStyles['form-button-in-bar']} ${styles.isShadowed} ${styles.isClicked}`}
 								onClick={onPMClick}
 							>
 								Tatiana Dias
 							</button>
 							<button
 								type='button'
-								className={`form-add-project-pm-option ${styles.isShadowed} ${styles.isClicked}`}
+								className={`${formStyles['form-button-in-bar']} ${styles.isShadowed} ${styles.isClicked}`}
 								onClick={onPMClick}
 							>
 								Leo Gouse
 							</button>
 						</div>
 					</fieldset>
-					<fieldset className={`${modalStyles['modal-field']}`}>
-						<label className='form-add-project-label' htmlFor='resources'>
+					<fieldset className={`${formStyles['form-field']}`}>
+						<label
+							className={`${formStyles['form-label']}`}
+							htmlFor='resources'
+						>
 							Resources
 						</label>
-						<div id='resources' className='form-add-project-buttons-resources'>
+						<div id='resources' className='add-project-buttons-resources'>
 							<button
 								type='button'
 								className={`${buttonStyles.button} ${buttonStyles['button-medium']} ${styles.white} ${styles.isShadowed} ${styles.isClicked}`}
@@ -173,12 +182,12 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 							</button>
 						</div>
 					</fieldset>
-					<fieldset className={`${modalStyles['modal-field']}`}>
-						<label className='form-add-project-label' htmlFor='timeline'>
+					<fieldset className={`${formStyles['form-field']}`}>
+						<label className={`${formStyles['form-label']}`} htmlFor='timeline'>
 							Project timeline
 						</label>
 						<div id='timeline' className='modal-add-project-timeline'>
-							<select className='form-add-project-select'>
+							<select className='add-project-select'>
 								<option>Custom</option>
 							</select>
 							<div className='modal-add-project-timestamps'>
@@ -221,20 +230,23 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 							</div>
 						</div>
 					</fieldset>
-					<fieldset className={`${modalStyles['modal-field']}`}>
-						<label className='form-add-project-label' htmlFor='estimation'>
+					<fieldset className={`${formStyles['form-field']}`}>
+						<label
+							className={`${formStyles['form-label']}`}
+							htmlFor='estimation'
+						>
 							Estimation
 						</label>
 						<input
 							type='text'
 							id='estimation'
 							name='estimation'
-							className={`${inputStyles.input} form-add-project-input`}
+							className={`${inputStyles.input} add-project-input`}
 							placeholder='00.00'
 						/>
 					</fieldset>
 				</section>
-				<div className={`${modalStyles['modal-footer']}`}>
+				<div className={`${formStyles['form-footer']}`}>
 					<button
 						type='reset'
 						className={`${buttonStyles.button} ${buttonStyles['button-large']} ${styles.white}`}

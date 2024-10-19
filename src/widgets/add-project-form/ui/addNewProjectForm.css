@@ -21,7 +21,7 @@ body:not(:-moz-handler-blocked) .fieldset {
 	display: table-cell;
 }
 
-.form-add-project {
+.add-project {
 	display: flex;
 	flex-direction: column;
 	inline-size: 400px;
@@ -32,41 +32,27 @@ body:not(:-moz-handler-blocked) .fieldset {
 	border-radius: 12px;
 }
 
-.modal-add-project-heading {
-	inline-size: 100%;
-	padding: 0 20px;
+.add-project-heading {
 	font-weight: 500;
-	font-size: 18px;
 }
 
-.modal-add-project-section {
-	display: flex;
-	flex-direction: column;
-	gap: 32px;
-	padding: 16px 20px;
-	color: #464f60;
-	font-weight: 400;
-	font-size: 14px;
+.add-project-section {
+	font-weight: 500;
 	background: #f7f8fa;
 }
 
-.form-add-project-label {
-	font-weight: 500;
-	font-size: 14px;
-}
-
-.form-add-project-label-required {
+.add-project-label-required {
 	position: relative;
 }
 
-.form-add-project-label-required::after {
+.add-project-label-required::after {
 	position: absolute;
 	content: '*';
 	padding-left: 5px;
 	color: #5e5adb;
 }
 
-.form-add-project-button-pm {
+.add-project-button-pm {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -76,36 +62,7 @@ body:not(:-moz-handler-blocked) .fieldset {
 	border-radius: 6px;
 }
 
-.form-add-project-buttons-bar {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 1px;
-	padding: 2px;
-	background-color: #e9edf5;
-	border-radius: 6px;
-}
-
-.form-add-project-pm-option {
-	padding: 4px 10px;
-	color: #464f60;
-	font-weight: 500;
-	font-size: 14px;
-	background-color: transparent;
-	border: 1px solid transparent;
-	border-radius: 4px;
-}
-
-.form-add-project-pm-option-active {
-	color: #5e5adb;
-	background: #ffffff;
-	border-radius: 4px;
-	box-shadow:
-		0 0 0 0.5px rgb(0 0 0 / 8%),
-		0 2px 6px rgb(0 0 0 / 25%);
-}
-
-.form-add-project-buttons-resources {
+.add-project-buttons-resources {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px;
@@ -114,14 +71,14 @@ body:not(:-moz-handler-blocked) .fieldset {
 	font-size: 12px;
 }
 
-.form-add-project-buttons-resource-active {
+.add-project-buttons-resource-active {
 	color: #5e5adb;
 	box-shadow:
 		0 0 0 0.5px rgb(0 0 0 / 8%),
 		0 2px 6px rgb(0 0 0 / 25%);
 }
 
-.form-add-project-input {
+.add-project-input {
 	padding: 6px 12px;
 	color: #464f60;
 	font-weight: 400;
@@ -159,7 +116,7 @@ body:not(:-moz-handler-blocked) .fieldset {
 		0 0 0 1px rgb(134 143 160 / 16%);
 }
 
-.form-add-project-select {
+.add-project-select {
 	display: flex;
 	inline-size: 100%;
 	padding: 6px 36px 6px 12px;

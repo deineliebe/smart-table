@@ -22,7 +22,7 @@ export const ProjectCardUI: FC<ProjectCardUIProps> = ({
 					onClick={checkProject}
 					checked={isChecked}
 				></input>
-				<span className='project-checkbox'></span>
+				<span className='default-checkbox'></span>
 				<span className={`${styles['visually-hidden']}`}>а</span>
 			</label>
 			<svg

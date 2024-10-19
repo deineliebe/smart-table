@@ -31,26 +31,16 @@ body:not(:-moz-handler-blocked) .fieldset {
 	border-radius: 12px;
 }
 
-.modal-settings-heading {
-	color: #171c26;
-	padding-inline: 20px;
+.settings-heading {
 	font-weight: 700;
-	font-size: 18px;
 }
 
-.modal-add-project-section {
+.settings-section {
+	border-bottom: #e9edf5 1px solid;
+}
+
+.settings-checkbox-field {
 	display: flex;
-	flex-direction: column;
-	gap: 32px;
-	padding: 16px 20px;
-	color: #464f60;
-	font-weight: 400;
-	font-size: 14px;
-	background: #f7f8fa;
-}
-
-.form-settings-label {
-	color: #464f60;
-	font-weight: 500;
-	font-size: 14px;
+	align-items: center;
+	gap: 10px;
 }
