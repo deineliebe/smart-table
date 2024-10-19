@@ -1,4 +1,4 @@
-import { FC, SyntheticEvent, useRef } from 'react';
+import { FC, SyntheticEvent, useRef, useState } from 'react';
 import './addNewProjectForm.css';
 import formStyles from '../../../shared/ui/form.module.css';
 import buttonStyles from '../../../shared/ui/button.module.css';
@@ -7,12 +7,17 @@ import styles from '../../../shared/ui/styles.module.css';
 import { useDispatch } from '@/shared/lib/store/store';
 import { addProject } from '@/shared/lib/store/slices/projects';
 import { TProject, TResource } from '@/shared/model/types';
+import DatePicker from 'react-datepicker';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 type AddNewFormProps = {
 	projects: TProject[];
 };
 
 const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
+	const [startDate, setStartDate] = useState(new Date());
+	const [endDate, setEndDate] = useState(new Date());
 	const barRef = useRef(null);
 	const dispatch = useDispatch();
 	const onPMClick = (evt: React.MouseEvent) => {
@@ -48,10 +53,24 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 				formData.querySelector('.add-project-pm-option') as HTMLButtonElement
 			)?.innerText,
 			status: 'On track',
-			last_update: date.toLocaleString(),
+			last_update: date.toLocaleString('en-us', {
+				day: 'numeric',
+				month: 'short',
+				year: 'numeric',
+				hour: 'numeric',
+				minute: 'numeric'
+			}),
 			resources: resourcesList,
-			start: (document.getElementById('start_date') as HTMLInputElement)?.value,
-			end: (document.getElementById('end_date') as HTMLInputElement)?.value,
+			start: startDate.toLocaleDateString('en-us', {
+				day: 'numeric',
+				month: 'short',
+				year: 'numeric'
+			}),
+			end: endDate.toLocaleDateString('en-us', {
+				day: 'numeric',
+				month: 'short',
+				year: 'numeric'
+			}),
 			estimation: (document.getElementById('estimation') as HTMLInputElement)
 				?.value
 		};
@@ -189,6 +208,12 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 						<div id='timeline' className='modal-add-project-timeline'>
 							<select className='add-project-select'>
 								<option>Custom</option>
+								<option>1 year</option>
+								<option>4-6 months</option>
+								<option>3 months</option>
+								<option>1-2 months</option>
+								<option>1 month</option>
+								<option>15 days</option>
 							</select>
 							<div className='modal-add-project-timestamps'>
 								<svg
@@ -200,10 +225,12 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 								>
 									<path d='M1 0V48' stroke='#E9EDF5' />
 								</svg>
-								<input
-									type='text'
-									id='start_date'
-									name='start_date'
+								<DatePicker
+									selected={startDate}
+									onChange={(date) => {
+										if (date) setStartDate(date);
+									}}
+									dateFormat='dd/MM/yyyy'
 									className={`${inputStyles.input} modal-add-project-timestamp`}
 								/>
 								<svg
@@ -221,10 +248,12 @@ const AddNewFormUI: FC<AddNewFormProps> = ({ projects }) => {
 										strokeLinejoin='round'
 									/>
 								</svg>
-								<input
-									type='text'
-									id='end_date'
-									name='end_date'
+								<DatePicker
+									selected={endDate}
+									onChange={(date) => {
+										if (date) setEndDate(date);
+									}}
+									dateFormat='dd/MM/yyyy'
 									className={`${inputStyles.input} modal-add-project-timestamp`}
 								/>
 							</div>
